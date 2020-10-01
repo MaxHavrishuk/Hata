@@ -54,10 +54,10 @@ namespace HataCom.Controllers
 			{
 				AlbumDescriptionModel albumDescription = new AlbumDescriptionModel();
 				string jsonString = formCollection["albuminfo"];
+				albumDescription = JsonConvert.DeserializeObject<AlbumDescriptionModel>(jsonString);
 				HttpFileCollectionBase files = null;
 				if (Request.Files.Count > 0 && !string.IsNullOrEmpty(albumDescription.AlbumName))
 				{
-					albumDescription = JsonConvert.DeserializeObject<AlbumDescriptionModel>(jsonString);
 					files = Request.Files;
 					List<Photo> photos = new List<Photo>();
 					PhotoAlbum album = new PhotoAlbum();
