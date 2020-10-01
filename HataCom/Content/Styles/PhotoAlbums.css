@@ -1,0 +1,234 @@
+body {
+    background: linear-gradient(#3c6273, rgba(93, 37, 37, 0.73));
+}
+
+/* #Header */
+
+.user-image {
+    width: 30px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+}
+
+.account {
+    padding: 0 !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+
+/* #Breadcrumb */
+
+.breadcrumb {
+    margin-top: 1rem !important;
+    background-color: transparent !important;
+}
+
+.breadcrumb-item {
+    color: #B7B7B7 !important;
+}
+
+.active {
+    color: white !important;
+}
+
+/* #Subsection name, Button */
+
+.subsection-name {
+    color: white !important;
+}
+
+@media only screen and (max-width: 325px) {
+    .subsection-name {
+        font-size: 1.6rem;
+    }
+}
+
+.add-album-btn {
+    padding: 0.6rem 2rem !important;
+    background-color: #009688 !important;
+    border-color: #009688 !important;
+}
+
+.add-album-btn-mobile {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 6px 0px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    background-color: #009688 !important;
+    border-color: #009688 !important;
+}
+
+/* #Card */
+
+.column-item {
+}
+
+.album-item {
+    border-radius: 10px !important;
+    overflow: hidden;
+    border: none !important;
+}
+
+.image-wrp {
+    width: 100% !important;
+    background: black !important;
+    overflow: hidden !important;
+}
+
+.album-cover-img {
+    object-fit: cover !important;
+}
+
+.card-title {
+    margin-bottom: 0 !important;
+}
+
+.album-name-row, .album-description-row {
+    justify-content: center !important;
+}
+
+/* #Card-Mobile */
+
+.card-body-mobile {
+    position: absolute !important;
+    margin-left: 1rem;
+    color: white !important;
+}
+
+.album-cover-img-mobile {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 0.7 !important;
+}
+
+.album-name-row-mobile, .album-description-row-mobile {
+    justify-content: start !important;
+}
+
+.dropup-mobile {
+    position: absolute !important;
+    margin-top: 88%;
+}
+
+.card-btn-settings-mobile {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: white !important;
+}
+
+@media (min-width: 560px) and (max-width: 576px) {
+    .column-item {
+        max-width: 50% !important;
+    }
+}
+
+/* #Preview */
+
+.preview-item {
+    border: none !important;
+    transition: ease all .3s;
+}
+
+.thumb {
+    width: 100% !important;
+}
+
+.thumb-menu {
+    position: absolute;
+}
+
+.thumb-btn {
+    border-radius: 2px !important;
+    font-size: 12px !important;
+}
+
+.thumb-input {
+    padding: 0 !important;
+}
+
+.thumb-checkbox, .thumb-checkbox-text, .remove {
+    cursor: pointer;
+}
+
+.thumb-checkbox-text, .remove {
+    font-size: 15px !important;
+}
+
+    .thumb-checkbox-text:hover {
+        color: #000000;
+    }
+
+    .remove:hover {
+        color: #db0202;
+    }
+
+.thumb-wrp {
+    max-height: 8em !important;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1200px) {
+    .thumb-wrp {
+        max-height: 8em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .thumb-wrp {
+        max-height: 7em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .thumb-wrp {
+        max-height: 7em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .thumb-wrp {
+        max-height: 16em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .thumb-wrp {
+        max-height: 14em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .thumb-wrp {
+        max-height: 10em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    .thumb-wrp {
+        max-height: 8em !important;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 290px) {
+    .thumb-wrp {
+        max-height: 5em !important;
+        overflow: hidden;
+    }
+}
+
+/* #Footer */
+
+.footer {
+    margin-top: 60vh;
+    bottom: 0;
+}

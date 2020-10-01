@@ -1,0 +1,139 @@
+﻿@*@model IEnumerable<BusinessLogic.PhotoAlbum>*@
+
+@Styles.Render("~/PhotoAlbumsPage/css")
+
+@using BusinessLogic.Models.ViewModels
+@model AddAlbumView
+
+<!--СПІЛЬНИЙ КОНТЕЙНЕР "ФОТО АЛЬБОМИ"-->
+<div class="container" style="margin-top: 55px">
+
+    <!--ХЛІБНІ КРИХТИ"-->
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Home/Index" class="breadcrumb-item">Головна</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Фото</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!--НАЗВА ПІДРОЗДІЛУ ТА КНОПКА "ДОДАТИ АЛЬБОМ"-->
+    <div class="row justify-content-between align-items-center pl-3 pr-3">
+        <h2 class="subsection-name">Фотоальбоми</h2>
+
+        <!--КНОПКА "ДОДАТИ АЛЬБОМ"-->
+        <button type="button" class="btn btn-info add-album-btn" id="modalButton" data-toggle="modal"
+                data-target=".bd-example-modal-lg">
+            <span class="add-album-text">Додати альбом</span>
+            <span class="plus"><i class="fas fa-plus"></i></span>
+        </button>
+    </div>
+
+    <!--МОДАЛЬНЕ ВІКНО-->
+    <div class="modal fade bd-example-modal-lg" data-backdrop="static" tabindex="-1" role="dialog"
+         aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add an album</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="newAlbumForm">
+                        <div class="form-group">
+                            @*<label for="album-name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="album-name" required>*@
+
+                            @Html.LabelFor(model => model.PhotoAlbum.Title, htmlAttributes: new { @class = "col-form-label" })
+                            @Html.EditorFor(model => model.PhotoAlbum.Title, new { htmlAttributes = new { @class = "form-control", @id = "album-name" } })
+                            @*@Html.ValidationMessageFor(model => model.PhotoAlbum.Title, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="form-group">
+                            @*<label for="album-description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="album-description"></textarea>*@
+
+                            @Html.LabelFor(model => model.PhotoAlbum.Description, htmlAttributes: new { @class = "col-form-label" })
+                            @Html.EditorFor(model => model.PhotoAlbum.Description, new { htmlAttributes = new { @class = "form-control", @id = "album-description" } })
+                            @*@Html.ValidationMessageFor(model => model.PhotoAlbum.Description, "", new { @class = "text-danger" })*@
+
+                        
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="fileInputControl"
+                                           accept="image/*" onchange="onChange(event)"
+                                           aria-describedby="inputGroupFileAddon01" multiple>
+                                    <label class="custom-file-label" for="fileInputControl">Choose files</label>
+                                </div>
+                            </div>
+                            <div class="row output"></div>
+                            <div class="row">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary ml-2" id="btn-submit" data-dismiss="modal">Confirm </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--РЯДОК ДЛЯ ВІДОБРАЖЕННЯ АЛЬБОМІВ-->
+    <div class="row">
+
+        <!--ALBUM ITEM-->
+        @foreach (var item in Model.PhotoAlbums)
+        {
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
+                <div class="card album-item mt-5 shadow">
+                    <a href="/Home/Photos/@item.PhotoAlbumId" class="album-link">
+                        <div class="embed-responsive embed-responsive-1by1 image-wrp">
+                            <img src="@item.IconLink"
+                                 class="card-img-top embed-responsive-item album-cover-img"
+                                 alt="">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <div class="row album-name-row">
+                            <h5 class="card-title">
+                                @item.Title                                
+                            </h5>
+                        </div>
+                        <div class="row album-description-row">
+                            <p class="card-text album-description">
+                                @item.Description
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn-group dropup">
+                        <button type="button"
+                                class="btn btn-light btn-sm card-btn-settings"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="container-fluid footer text-center" style="color: white;">
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - HATA</p>
+    </footer>
+</div>
+
+
+@Scripts.Render("~/PhotoAlbums.js")

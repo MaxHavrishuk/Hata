@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="~/Content/MusicStyles.css" />
+    @Styles.Render("~/Content/Music/css");
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap&subset=cyrillic"
+          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Player</title>
+
+</head>
+
+<body>
+
+    <!-- SONG LIST -->
+    <div class="wrp">
+
+    </div>
+    <!-- /SONG LIST -->
+    <!-- CONTROL PANEL -->
+    <div class="panel">
+        <!-- PROGRESS LINE -->
+        <div class="bar">
+            <div class="setTime"></div>
+            <div class="range">
+                <div class="progress"></div>
+                <div class="load"></div>
+            </div>
+        </div>
+        <!-- SONG NAME -->
+        <div class="songName">
+            <span class="authorName"><b>HATA</b></span>
+            <b>-</b>
+            <span class="trackName">Audio Player</span>
+        </div>
+        <!-- MUTE/VOLUME -->
+        <div class="mute"></div>
+        <input type="range" class="volume" min="0" max="100" value="100">
+        <!-- BTN CONTROL -->
+        <div class="songControl">
+            <div class="btnPrevious" id="previous" data-id="-1"></div>
+            <div class="btnPlayPause" id="-1"></div>
+            <div class="btnNext" id="next" data-id="-1"></div>
+            <div class="btnStop" id="stop" id="-1"></div>
+        </div>
+        <!-- TIME/DURATION -->
+        <div class="time">0:00</div>
+        <div class="duration">/0:00</div>
+    </div>
+    <!-- /CONTROL PANEL -->
+
+
+
+    @Scripts.Render("~/Scripts/js");
+
+</body>
+
+</html>

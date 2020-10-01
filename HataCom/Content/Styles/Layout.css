@@ -1,0 +1,14 @@
+/* #Header */
+
+.user-image {
+    width: 30px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+}
+
+.account {
+    padding: 0 !important;
+    text-decoration: none !important;
+    color: white !important;
+}

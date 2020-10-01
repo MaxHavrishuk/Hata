@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BusinessLogic.Models.Photo>
+
+    @{
+        ViewBag.Title = "View";
+    }
+
+    <h2>View</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoAlbumId)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <img src=@item.ImageLink width="300" height="300"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoAlbumId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PhotoId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PhotoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PhotoId })
+            </td>
+        </tr>
+    }
+
+    </table>
+
+
+
+   
