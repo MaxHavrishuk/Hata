@@ -1,3 +1,5 @@
+/* #Body */
+
 body {
     background: linear-gradient(#3c6273, rgba(93, 37, 37, 0.73));
 }
@@ -61,9 +63,6 @@ body {
 }
 
 /* #Card */
-
-.column-item {
-}
 
 .album-item {
     border-radius: 10px !important;
@@ -170,6 +169,15 @@ body {
     overflow: hidden;
 }
 
+/* Sweet Alert Info */
+
+.swal2-info {
+    background: url(/img/alert.png) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    color: transparent !important;
+}
+
 @media only screen and (max-width: 1200px) {
     .thumb-wrp {
         max-height: 8em !important;
@@ -229,6 +237,7 @@ body {
 /* #Footer */
 
 .footer {
-    margin-top: 60vh;
+    margin-top: 400px;
     bottom: 0;
+    color: white;
 }

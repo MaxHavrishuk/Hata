@@ -179,6 +179,7 @@
     <Content Include="Views\Account\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Content\mediaContent\Msuic\" />
     <Folder Include="Content\mediaContent\Photo\" />
     <Folder Include="Content\mediaContent\Video\" />

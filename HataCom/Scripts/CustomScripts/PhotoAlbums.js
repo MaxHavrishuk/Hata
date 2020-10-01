@@ -256,6 +256,8 @@ function toSend(e) {
 // #Display width event
 window.addEventListener('load', () => {
     let clientWidth = document.body.clientWidth;
+    let clientHeight = (screen.height - 55).toString() + 'px';
+    document.querySelector('.main-container').style.minHeight = clientHeight;
     if (clientWidth < 576) {
         addClass();
     } else if (clientWidth > 575) {
@@ -265,6 +267,8 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', () => {
     let clientWidth = document.body.clientWidth;
+    let clientHeight = (screen.height - 55).toString() + 'px';
+    document.querySelector('.main-container').style.minHeight = clientHeight;
     console.log(clientWidth);
     if (clientWidth < 576) {
         addClass();

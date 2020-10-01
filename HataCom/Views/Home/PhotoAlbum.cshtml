@@ -6,7 +6,7 @@
 @model AddAlbumView
 
 <!--СПІЛЬНИЙ КОНТЕЙНЕР "ФОТО АЛЬБОМИ"-->
-<div class="container" style="margin-top: 55px">
+<div class="container main-container" style="margin-top: 55px">
 
     <!--ХЛІБНІ КРИХТИ"-->
     <div class="row">
@@ -56,7 +56,7 @@
                             @Html.EditorFor(model => model.PhotoAlbum.Description, new { htmlAttributes = new { @class = "form-control", @id = "album-description" } })
                             @*@Html.ValidationMessageFor(model => model.PhotoAlbum.Description, "", new { @class = "text-danger" })*@
 
-                        
+
                         </div>
 
                         <div class="modal-footer">
@@ -85,53 +85,53 @@
 
         <!--ALBUM ITEM-->
         @foreach (var item in Model.PhotoAlbums)
-        {
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
-                <div class="card album-item mt-5 shadow">
-                    <a href="/Home/Photos/@item.PhotoAlbumId" class="album-link">
-                        <div class="embed-responsive embed-responsive-1by1 image-wrp">
-                            <img src="@item.IconLink"
-                                 class="card-img-top embed-responsive-item album-cover-img"
-                                 alt="">
+            {
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
+                    <div class="card album-item mt-5 shadow">
+                        <a href="/Home/Photos/@item.PhotoAlbumId" class="album-link">
+                            <div class="embed-responsive embed-responsive-1by1 image-wrp">
+                                <img src="@item.IconLink"
+                                     class="card-img-top embed-responsive-item album-cover-img"
+                                     alt="">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <div class="row album-name-row">
+                                <h5 class="card-title">
+                                    @item.Title
+                                </h5>
+                            </div>
+                            <div class="row album-description-row">
+                                <p class="card-text album-description">
+                                    @item.Description
+                                </p>
+                            </div>
                         </div>
-                    </a>
-                    <div class="card-body">
-                        <div class="row album-name-row">
-                            <h5 class="card-title">
-                                @item.Title                                
-                            </h5>
-                        </div>
-                        <div class="row album-description-row">
-                            <p class="card-text album-description">
-                                @item.Description
-                            </p>
-                        </div>
-                    </div>
-                    <div class="btn-group dropup">
-                        <button type="button"
-                                class="btn btn-light btn-sm card-btn-settings"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="btn-group dropup">
+                            <button type="button"
+                                    class="btn btn-light btn-sm card-btn-settings"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
 
     </div>
 </div>
 
-<div class="container-fluid footer text-center" style="color: white;">
+<div class="container-fluid text-center mt-5 footer">
     <hr />
     <footer>
-        <p>&copy; @DateTime.Now.Year - HATA</p>
+        <p>© 2020 - HATA</p>
     </footer>
 </div>
 
