@@ -37,16 +37,6 @@ namespace HataCom.Controllers
 			return View();
 		}
 
-		[HttpGet]
-		public ContentResult Test()
-		{
-			var t = new AlbumDescriptionModel();
-			var res = JsonConvert.SerializeObject(t, Formatting.None);
-			ContentResult result = new ContentResult();
-			result.ContentType = "testing";
-			return result;
-		}
-
 		[HttpPost]
 		public HttpStatusCode Upload(FormCollection formCollection)
 		{
