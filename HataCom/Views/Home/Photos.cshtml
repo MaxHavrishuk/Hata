@@ -1,55 +1,59 @@
 ﻿@model IEnumerable<BusinessLogic.Models.Photo>
 
-    @{
-        ViewBag.Title = "View";
-    }
+@Styles.Render("~/PhotosPage/css")
 
-    <h2>View</h2>
+@{
+    ViewBag.Title = "View";
+}
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageLink)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhotoAlbumId)
-            </th>
-            <th></th>
-        </tr>
+<!--СПІЛЬНИЙ КОНТЕЙНЕР "ФОТО"-->
+<div class="container main-container" style="margin-top: 55px;">
 
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                <img src=@item.ImageLink width="300" height="300"/>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhotoAlbumId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.PhotoId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PhotoId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.PhotoId })
-            </td>
-        </tr>
-    }
+    <!--ХЛІБНІ КРИХТИ"-->
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="breadcrumb-item">Головна</a></li>
+                <li class="breadcrumb-item"><a href="#" class="breadcrumb-item">Фото</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Test Album</li>
+            </ol>
+        </nav>
+    </div>
 
-    </table>
+    <!--НАЗВА ПІДРОЗДІЛУ ТА КНОПКА "РЕДАГУВАТИ АЛЬБОМ"-->
+    <div class="row justify-content-between align-items-center pl-3 pr-3">
+        <h2 class="subsection-name">Альбом 1</h2>
 
+        <!--КНОПКА "РЕДАГУВАТИ АЛЬБОМ"-->
+        <button type="button" class="btn btn-info edit-album-btn"></button>
+    </div>
 
+    <!--СПІЛЬНИЙ РЯДОК ДЛЯ ВІДОБРАЖЕННЯ ФОТО-->
+    <div class="row photo-list">
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
+                <div class="card bg-dark text-white mt-5 shadow photo-item">
+                    <div class="row ml-0 photo-gradient"></div>
+                    <div class="embed-responsive embed-responsive-4by3">
+                        <img src="@item.ImageLink"
+                             class="card-img embed-responsive-item photo-img" alt="...">
+                    </div>
+                    <div class="card-img-overlay photo-name-wrp">
+                        <h6 class="card-title photo-name">@item.Title</h6>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
-   
+<!-- ФУТЕР -->
+<div class="container-fluid text-center mt-5 footer">
+    <hr />
+    <footer>
+        <p>© 2020 - HATA</p>
+    </footer>
+</div>
+
+@Scripts.Render("~/Photos.js")
