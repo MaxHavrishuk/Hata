@@ -3,49 +3,64 @@
 }
 @Styles.Render("~/MainPage/css")
 
-
-        <!-- Контент головного меню -->
-        <!-- portfolio -->
-        <div class="container-fluid">
-            <div class="row mx-auto"></div>
-                <a href="/Home/PhotoAlbum">
-                    <div class="col-sm-6 parent-block">
-                        <div class="menu-left-top scale-menu">
-                            <div class="text-centered-inside-block">
-                                <h1>Photo</h1>
-                            </div>
+<!--HOME MENU-->
+<div class="container-fluid main-menu">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 wrp">
+            <a href="/Home/PhotoAlbum">
+                <div class="img-photo">
+                    <div class="row h-100">
+                        <div class="col-12 d-flex justify-content-center align-items-end">
+                            <h1>Photo</h1>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <p>Some description text</p>
                         </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-sm-6 parent-block">
-                        <div class="menu-right-top scale-menu">
-                            <div class="text-centered-inside-block">
-                                <h1>Video</h1>
-                            </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 wrp">
+            <a href="#">
+                <div class="img-video">
+                    <div class="row h-100">
+                        <div class="col-12 d-flex justify-content-center align-items-end">
+                            <h1>Video</h1>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <p>Some description text</p>
                         </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-sm-6 parent-block">
-                        <div class="menu-left-bottom scale-menu">
-                            <div class="text-centered-inside-block">
-                                <h1>Music</h1>
-                            </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 wrp">
+            <a href="#">
+                <div class="img-music">
+                    <div class="row h-100">
+                        <div class="col-12 d-flex justify-content-center align-items-end">
+                            <h1>Music</h1>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <p>Some description text</p>
                         </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-sm-6 parent-block">
-                        <div class="menu-right-bottom scale-menu">
-                            <div class="text-centered-inside-block">
-                                <h1>Text</h1>
-                            </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 wrp">
+            <a href="#">
+                <div class="img-archive">
+                    <div class="row h-100">
+                        <div class="col-12 d-flex justify-content-center align-items-end">
+                            <h1>Archive</h1>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <p>Some description text</p>
                         </div>
                     </div>
-                </a>
-            </div>
-        <!-- Підключення скрпитів -->
-        @*<script src="Scripts/jquery-3.3.1.min.js"></script>
-        <script src="Scripts/bootstrap.min.js"></script>*@
-
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

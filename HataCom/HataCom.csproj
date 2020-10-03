@@ -134,10 +134,10 @@
     <Compile Include="Providers\UserRolesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\img\arhiv.jpg" />
-    <Content Include="Content\img\fot.jpg" />
-    <Content Include="Content\img\musik.jpg" />
-    <Content Include="Content\img\vid.jpg" />
+    <Content Include="Content\img\Img1.jpg" />
+    <Content Include="Content\img\Img2.jpg" />
+    <Content Include="Content\img\Img3.jpg" />
+    <Content Include="Content\img\Img4.jpg" />
     <Content Include="Content\mediaContent\UsersPhoto\basicUserAdmin.jpg" />
     <Content Include="Content\Styles\Layout.css" />
     <Content Include="Scripts\CustomScripts\PhotoAlbums.js" />
