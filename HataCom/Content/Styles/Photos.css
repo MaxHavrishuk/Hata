@@ -1,0 +1,102 @@
+﻿/* #Body */
+
+body {
+    background: linear-gradient(#3c6273, rgba(93, 37, 37, 0.73));
+}
+
+/* #Header */
+
+.user-image {
+    width: 30px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+}
+
+.account {
+    padding: 0 !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+
+/* #Breadcrumb */
+
+.breadcrumb {
+    margin-top: 1rem !important;
+    background-color: transparent !important;
+}
+
+.breadcrumb-item {
+    color: #B7B7B7 !important;
+}
+
+.active {
+    color: white !important;
+}
+
+/* #Subsection name, Button */
+
+.subsection-name {
+    color: white !important;
+}
+
+@media only screen and (max-width: 325px) {
+    .subsection-name {
+        font-size: 1.6rem;
+    }
+}
+
+.edit-album-btn {
+    padding: 0.6rem 2rem !important;
+    background-color: #309abb !important;
+    border-color: #309abb !important;
+}
+
+.edit-album-btn-mobile {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 6px 0px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    background-color: #309abb !important;
+    border-color: #309abb !important;
+}
+
+/* #Card */
+
+.photo-item {
+    overflow: hidden;
+    border: none !important;
+}
+
+.photo-img {
+    object-fit: cover !important;
+}
+
+.photo-gradient {
+    position: absolute !important;
+    min-width: 100% !important;
+    min-height: 35% !important;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4962359943977591) 67%, rgba(0, 0, 0, 0.700717787114846) 100%) !important;
+    color: transparent !important;
+    z-index: 1000 !important;
+}
+
+.photo-name-wrp {
+    padding: 0.7rem 1rem !important;
+    z-index: 1001 !important;
+}
+
+/* #Card-Mobile */
+
+@media (min-width: 560px) and (max-width: 576px) {
+    .column-item {
+        max-width: 50% !important;
+    }
+}
+
+/* #Footer */
+
+.footer {
+    color: white;
+}

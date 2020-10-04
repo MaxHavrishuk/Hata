@@ -31,12 +31,23 @@ namespace HataCom
 			bundles.Add(new StyleBundle("~/PhotoAlbumsPage/css").Include(
 					  "~/Content/Styles/PhotoAlbums.css"
 					  ));
+
+			//Photos Page styles CSS
+			bundles.Add(new StyleBundle("~/PhotosPage/css").Include(
+					  "~/Content/Styles/Photos.css"
+					  ));
+
 			//STYLES FOR SITE END
 
 
 			//SCRIPTS FOR SITE BEGIN
+			//PhotoAlbums Script
 			bundles.Add(new ScriptBundle("~/PhotoAlbums.js").Include(
 				"~/Scripts/CustomScripts/PhotoAlbums.js"));
+
+			//Photos Script
+			bundles.Add(new ScriptBundle("~/Photos.js").Include(
+				"~/Scripts/CustomScripts/Photos.js"));
 			//SCRIPTS FOR SITE END
 
 
