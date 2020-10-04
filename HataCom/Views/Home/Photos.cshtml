@@ -13,8 +13,8 @@
     <div class="row">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="breadcrumb-item">Головна</a></li>
-                <li class="breadcrumb-item"><a href="#" class="breadcrumb-item">Фото</a></li>
+                <li class="breadcrumb-item"><a href="/Home/Index" class="breadcrumb-item">Головна</a></li>
+                <li class="breadcrumb-item"><a href="/Home/PhotoAlbum" class="breadcrumb-item">Фото</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Test Album</li>
             </ol>
         </nav>
@@ -33,16 +33,18 @@
         @foreach (var item in Model)
         {
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
-                <div class="card bg-dark text-white mt-5 shadow photo-item">
-                    <div class="row ml-0 photo-gradient"></div>
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <img src="@item.ImageLink"
-                             class="card-img embed-responsive-item photo-img" alt="...">
+                <a data-fancybox="gallery" href="@item.ImageLink">
+                    <div class="card bg-dark text-white mt-5 shadow photo-item">
+                        <div class="row ml-0 photo-gradient"></div>
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <img src="@item.ImageLink"
+                                 class="card-img embed-responsive-item photo-img" alt="...">
+                        </div>
+                        <div class="card-img-overlay photo-name-wrp">
+                            <h6 class="card-title photo-name">@item.Title</h6>
+                        </div>
                     </div>
-                    <div class="card-img-overlay photo-name-wrp">
-                        <h6 class="card-title photo-name">@item.Title</h6>
-                    </div>
-                </div>
+                </a>
             </div>
         }
     </div>
