@@ -26,11 +26,19 @@ window.addEventListener('resize', () => {
 });
 
 function addClass() {
+    document.querySelector('.add-photo-btn').classList.add('add-photo-btn-mobile');
+    document.querySelector('.add-photo-btn').innerHTML = '<i class="fas fa-image"></i>';
+
     document.querySelector('.edit-album-btn').classList.add('edit-album-btn-mobile');
-    document.querySelector('.edit-album-btn').innerHTML = '<i class="fas fa-cog"></i>';
+    document.querySelector('.edit-album-btn').innerHTML = '<i class="fas fa-cog">';
 }
 
 function removeClass() {
+    document.querySelector('.add-photo-btn').classList.remove('add-photo-btn-mobile');
+    document.querySelector('.add-photo-btn').innerHTML = 'Додати фото';
+
     document.querySelector('.edit-album-btn').classList.remove('edit-album-btn-mobile');
     document.querySelector('.edit-album-btn').innerHTML = 'Редагувати альбом';
 }
+
+console.log(document.querySelector('.album-description').innerHTML.trim().length);

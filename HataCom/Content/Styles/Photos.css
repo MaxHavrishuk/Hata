@@ -34,25 +34,19 @@ body {
     color: white !important;
 }
 
-/* #Subsection name, Button */
+/* #Album name, Description, Quantity, Add-Button */
 
-.subsection-name {
+.album-name, .album-description, .photos-quantity {
     color: white !important;
 }
 
-@media only screen and (max-width: 325px) {
-    .subsection-name {
-        font-size: 1.6rem;
-    }
-}
-
-.edit-album-btn {
+.add-photo-btn {
     padding: 0.6rem 2rem !important;
     background-color: #309abb !important;
     border-color: #309abb !important;
 }
 
-.edit-album-btn-mobile {
+.add-photo-btn-mobile {
     width: 50px !important;
     height: 50px !important;
     padding: 6px 0px !important;
@@ -62,8 +56,14 @@ body {
     border-color: #309abb !important;
 }
 
-/* #Card */
+.horizontal-line {
+    width: 100%;
+    height: 1px;
+    background: white;
+    opacity: .2;
+}
 
+/* #Card */
 .photo-item {
     overflow: hidden;
     border: none !important;
@@ -89,7 +89,7 @@ body {
 
 /* #Card-Mobile */
 
-@media (min-width: 560px) and (max-width: 576px) {
+@media (min-width: 200px) and (max-width: 576px) {
     .column-item {
         max-width: 50% !important;
     }

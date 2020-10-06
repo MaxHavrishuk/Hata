@@ -20,12 +20,30 @@
         </nav>
     </div>
 
-    <!--НАЗВА ПІДРОЗДІЛУ ТА КНОПКА "РЕДАГУВАТИ АЛЬБОМ"-->
-    <div class="row justify-content-between align-items-center pl-3 pr-3">
-        <h2 class="subsection-name">Альбом 1</h2>
+    <!--НАЗВА АЛЬБОМУ-->
+    <div class="row justify-content-between align-items-center pl-3 pr-3 mb-3">
+        <h2 class="album-name">Альбом 1</h2>
 
+        <!--КНОПКА "ДОДАТИ ФОТО"-->
+        <button type="button" class="btn btn-info add-photo-btn"></button>
+    </div>
+
+    <!--ОПИС АЛЬБОМУ-->
+    <div class="row pl-3 pr-3">
+        <div class="col-12 col-md-6 col-xl-6 pl-0 pr-0">
+            <p class="album-description">
+                Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи в документ або презентацію, наприклад.
+            </p>
+        </div>
+    </div>
+
+    <div class="mb-4 horizontal-line"></div>
+
+    <!--КІЛЬКІСТЬ ФОТО-->
+    <div class="row justify-content-between align-items-center pl-3 pr-3 mb-4">
+        <h6 class="photos-quantity">Фото (@Model.Count())</h6>
         <!--КНОПКА "РЕДАГУВАТИ АЛЬБОМ"-->
-        <button type="button" class="btn btn-info edit-album-btn"></button>
+        <button type="button" class="btn btn-outline-light edit-album-btn"></button>
     </div>
 
     <!--СПІЛЬНИЙ РЯДОК ДЛЯ ВІДОБРАЖЕННЯ ФОТО-->
@@ -34,7 +52,7 @@
         {
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
                 <a data-fancybox="gallery" href="@item.ImageLink">
-                    <div class="card bg-dark text-white mt-5 shadow photo-item">
+                    <div class="card bg-dark text-white shadow mb-5 photo-item">
                         <div class="row ml-0 photo-gradient"></div>
                         <div class="embed-responsive embed-responsive-4by3">
                             <img src="@item.ImageLink"
