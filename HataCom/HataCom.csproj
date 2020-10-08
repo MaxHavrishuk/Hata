@@ -127,6 +127,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MusicController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -173,12 +175,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Music.cshtml" />
-    <Content Include="Views\Home\Photos.cshtml" />
-    <Content Include="Views\Home\PhotoAlbum.cshtml" />
+    <Content Include="Views\Music\MusicAlbum.cshtml" />
+    <Content Include="Views\Photo\Photos.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Account\UserPage.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\Photo\PhotoAlbum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

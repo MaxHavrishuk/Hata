@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -36,26 +38,50 @@ namespace BusinessLogic.BusinessLogicMethods
 		{
 			try
 			{
-				return db.PhotoAlbums;
+				var albums = db.PhotoAlbums;
+				return albums;
 			}
 			catch (Exception)
 			{
 				throw;
 			}
+			
 		}
 
+		//Додатково перевірити все, перевірки і тд!!!!!!!!!
 		public bool Remove(int id)
 		{
 			PhotoAlbum album = db.PhotoAlbums.Find(id);
-			try
+			if (album != null)
 			{
-				db.PhotoAlbums.Remove(album);
-				return true;
+				try
+				{
+					List<Photo> photosToDelete = db.Photos.Where(e => e.PhotoAlbumId == album.PhotoAlbumId).ToList();
+					db.Photos.RemoveRange(photosToDelete);
+					db.PhotoAlbums.Remove(album);
+					db.SaveChanges();
+
+
+					foreach (var item in photosToDelete)
+					{
+						if (File.Exists(HttpContext.Current.Server.MapPath(item.ImageLink)))
+						{
+							File.Delete(HttpContext.Current.Server.MapPath(item.ImageLink));
+						}
+
+					}
+					return true;
+				}
+				catch (Exception)
+				{
+					return false;
+				}
 			}
-			catch (Exception)
+			else
 			{
 				return false;
 			}
+
 		}
 
 		public bool Add(PhotoAlbum entity)
@@ -63,6 +89,7 @@ namespace BusinessLogic.BusinessLogicMethods
 			try
 			{
 				db.PhotoAlbums.Add(entity);
+				db.SaveChanges();
 				return true;
 			}
 			catch (Exception)
@@ -103,20 +130,6 @@ namespace BusinessLogic.BusinessLogicMethods
 			}
 		}
 
-		////перевантажений метод додавання з файлами!!!!
-		//public bool Add(PhotoAlbum entity, IEnumerable<HttpPostedFileBase> files)
-		//{
-		//	try
-		//	{
-		//		db.PhotoAlbums.Add(entity);
-
-		//		return true;
-		//	}
-		//	catch (Exception)
-		//	{
-		//		return false;
-		//	}
-		//}
 
 		public bool Update(PhotoAlbum enitity)
 		{
