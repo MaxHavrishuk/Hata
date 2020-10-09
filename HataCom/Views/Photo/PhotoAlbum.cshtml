@@ -20,7 +20,7 @@
 
     <!--НАЗВА ПІДРОЗДІЛУ ТА КНОПКА "ДОДАТИ АЛЬБОМ"-->
     <div class="row justify-content-between align-items-center pl-3 pr-3">
-        <h2 class="subsection-name">Фотоальбоми</h2>
+        <h2 class="subsection-name">Фотоальбоми (@Model.PhotoAlbums.Count())</h2>
 
         <!--КНОПКА "ДОДАТИ АЛЬБОМ"-->
         <button type="button" class="btn btn-info add-album-btn" id="modalButton" data-toggle="modal"
@@ -88,7 +88,7 @@
             {
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
                     <div class="card album-item mt-5 shadow">
-                        <a href="/Home/Photos/@item.PhotoAlbumId" class="album-link">
+                        <a href="/Photo/Photos/@item.PhotoAlbumId" class="album-link">
                             <div class="embed-responsive embed-responsive-1by1 image-wrp">
                                 <img src="@item.IconLink"
                                      class="card-img-top embed-responsive-item album-cover-img"
@@ -116,7 +116,7 @@
                                 <i class="fas fa-ellipsis-h"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="/Photo/DeletePhotoAlbum/@item.PhotoAlbumId">Видалити Альбом</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>

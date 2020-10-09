@@ -17,5 +17,6 @@ namespace BusinessLogic.Models.Authorization
 
 		public string RoleName { get; set; }
 
+
 	}
 }

@@ -214,7 +214,7 @@ function toSend(e) {
         formData.append('file', mediaFiles[i])
     }
 
-    xhr.open('POST', '/Home/Upload', true)
+    xhr.open('POST', '/Photo/Upload', true)
     xhr.send(formData)
 
     xhr.onload = () => {

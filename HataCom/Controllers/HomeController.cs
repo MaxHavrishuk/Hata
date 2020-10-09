@@ -30,152 +30,24 @@ namespace HataCom.Controllers
 {
 	public class HomeController : Controller
 	{
-		PhotoAlbumsRepository photoAlbumsDb = new PhotoAlbumsRepository();
-		PhotoRepository photosDb = new PhotoRepository();
 		public ActionResult Index()
 		{
 			return View();
 		}
 
-		[HttpPost]
-		public HttpStatusCode Upload(FormCollection formCollection)
-		{
-			if (ModelState.IsValid)
-			{
-				AlbumDescriptionModel albumDescription = new AlbumDescriptionModel();
-				string jsonString = formCollection["albuminfo"];
-				albumDescription = JsonConvert.DeserializeObject<AlbumDescriptionModel>(jsonString);
-				HttpFileCollectionBase files = null;
-				if (Request.Files.Count > 0 && !string.IsNullOrEmpty(albumDescription.AlbumName))
-				{
-					files = Request.Files;
-					List<Photo> photos = new List<Photo>();
-					PhotoAlbum album = new PhotoAlbum();
-					string fileName;
-					for (int i = 0; i < files.Count; i++)
-					{
-						fileName = Guid.NewGuid() + files[i].ContentType.Replace('/', '.');
-						files[i].SaveAs(Server.MapPath(PathsToContent.PhotosPath + fileName));
-						photos.Add(new Photo()
-						{
-							ImageLink = PathsToContent.PhotosPath + fileName,
-							Title = albumDescription.Photos[i].Name,
-							IsCover = albumDescription.Photos[i].IsCover
-						});
-					}
-					album.Photos = photos;
-					album.Title = albumDescription.AlbumName;
-					album.Description = albumDescription.AlbumDescription;
-
-					if (photoAlbumsDb.AddWithPhotos(album))
-					{
-						photoAlbumsDb.Dispose();
-						return HttpStatusCode.OK;
-					}
-					else
-					{
-						photoAlbumsDb.Dispose();
-						return HttpStatusCode.BadRequest;
-					}
-				}
-				else
-				{
-					photoAlbumsDb.Dispose();
-					return HttpStatusCode.BadRequest;
-				}
-			}
-			else
-			{
-				photoAlbumsDb.Dispose();
-				return HttpStatusCode.BadRequest;
-			}
-		}
-
-		//Test begin
-		public ActionResult PhotoAlbum()
-		{
-			AddAlbumView addAlbumView = new AddAlbumView();
-
-			addAlbumView.PhotoAlbums = photoAlbumsDb.GetAll();
-			
-			return View(addAlbumView);
-		}
-
-		[HttpGet]
-		public ActionResult Photos(int Id)
-		{
-			var test = photosDb.GetPhotosByAlbumId(Id);
-
-			return View(test);
-		}
-
-		//[ValidateAntiForgeryToken]
-		//[HttpPost]
-		//public ActionResult Disabled_____Upload(AddAlbumView model)
+		//[Authorize(Roles = RoleTypes.Admin + "," + RoleTypes.Authorized_Extended_Access)]
+		//public ActionResult About()
 		//{
-		//	if (ModelState.IsValid)
-		//	{
-		//		//Потрібно зробити перевірку на формати!!! можливо покращити перевірку на наявність файлів
-		//		//Вдосконалити перевірку на те чи обрана обложка
-		//		List<Photo> photos = new List<Photo>();
-		//		int counter = 0;
-		//		foreach (var file in model.Files)
-		//		{
-		//			string fileName = Path.GetFileName(file.FileName);
-		//			//створення правильного посилання
-		//			string finalName = Guid.NewGuid() + file.ContentType.Replace('/', '.');
-		//			string link = Server.MapPath(PathsToContent.PhotosPath + finalName);
-		//			file.SaveAs(link);
-
-		//			photos.Add(new Photo()
-		//			{
-		//				ImageLink = PathsToContent.PhotosPath + finalName,
-		//				Title = model.PhotoAlbum.Photos[counter].Title,
-		//				IsCover = model.PhotoAlbum.Photos[counter].IsCover
-		//			});
-		//			counter++;
-		//		}
-		//		//photos[0].IsCover = true;//!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-		//		model.PhotoAlbum.Photos = photos;
-		//		photoAlbums.AddWithPhotos(model.PhotoAlbum);
-		//	}
-		//	//Фізичне завнатаження файлі на сервер
-
-		//	return RedirectToAction("PhotoAlbum");
+		//	ViewBag.Message = "Your application description page.";
+		//	return View();
 		//}
 
-		//if (upload != null)
+		//public ActionResult Contact()
 		//{
-		//	// получаем имя файла
-		//	string fileName = System.IO.Path.GetFileName(upload.FileName);
-		//	// сохраняем файл в папку Files в проекте
-		//	upload.SaveAs(Server.MapPath("~/Content/testFiles/" + fileName));
 
+		//	ViewBag.Message = "Your contact page.";
+		//	return View();
 		//}
-		//return View("PhotoAlbum");
-		//return RedirectToAction("Index");
-
-		//Test end
-
-		[Authorize(Roles = RoleTypes.Admin + "," + RoleTypes.Authorized_Extended_Access)]
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-			return View();
-		}
-
-		public ActionResult Contact()
-		{
-
-			ViewBag.Message = "Your contact page.";
-			return View();
-		}
-
-		public ActionResult Music()
-		{
-			return View();
-		}
 
 	}
 }
