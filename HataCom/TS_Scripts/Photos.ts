@@ -5,7 +5,7 @@ class PhotoAlbumEdit {
         this.init();
     }
 
-    init() {
+    init(): void {
         document.addEventListener('DOMContentLoaded', () => {
             const editAlbumBtn = document.querySelector('.edit-album-btn') as HTMLDivElement
             editAlbumBtn.addEventListener('click', this.editStart);
@@ -15,7 +15,7 @@ class PhotoAlbumEdit {
         });
     }
 
-    editStart() {
+    editStart(): void {
         const popUp = document.querySelector('.pop-up') as HTMLDivElement
         popUp.style.marginTop = '55px';
 
@@ -26,7 +26,7 @@ class PhotoAlbumEdit {
         removePhotoBtn.style.display = 'block';
     }
 
-    editCancel() {
+    editCancel(): void {
         const popUp = document.querySelector('.pop-up') as HTMLDivElement;
         popUp.style.marginTop = '-55px';
 
@@ -46,7 +46,7 @@ class DisplaySize {
         this.displayChange();
     }
 
-    displayChange() {
+    displayChange(): void {
         window.addEventListener('load', (): void => {
 
             let clientWidth = document.body.clientWidth;
