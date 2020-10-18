@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "ES6",
+    "outDir": "Scripts/CustomScripts"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}
