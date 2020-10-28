@@ -1,22 +1,40 @@
 ﻿/* #Body */
 
 body {
-    background: linear-gradient(#3c6273, rgba(93, 37, 37, 0.73));
+    background: linear-gradient(#3d5768, #3c6273);
 }
 
 /* #Header */
+
+/*.bg-light {
+    background: #f2c474 !important;
+}*/
+
+.navbar {
+    z-index: 1010;
+}
+
+/*.navbar-brand {
+    color: #262d35 !important;
+    font-weight: bold !important;
+}*/
+
+/*.nav-link {
+    font-weight: 500 !important;
+}*/
 
 .user-image {
     width: 30px;
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 50% !important;
+    /*border: #262d35 1px solid;*/
 }
 
 .account {
     padding: 0 !important;
     text-decoration: none !important;
-    color: white !important;
+    /*color: #262d35 !important;*/
 }
 
 /* #Breadcrumb */
@@ -34,17 +52,42 @@ body {
     color: white !important;
 }
 
-/* #Album name, Description, Quantity, Add-Button */
+/* #Album name, Description, Quantity, Add-Button, Edit-Button */
 
 .album-name, .album-description, .photos-quantity {
     color: white !important;
 }
+
+.horizontal-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.10127801120448177) 0%, rgba(255, 255, 255, 0.7483368347338936) 50%, rgba(255, 255, 255, 0.10407913165266103) 100%);
+    opacity: .2;
+}
+
+.edit-album-btn {
+    padding: 0 !important;
+    background: transparent !important;
+    color: #f1f1f1 !important;
+    border-color: #f1f1f100 !important;
+}
+
+    .edit-album-btn:hover {
+        color: #f2c474 !important;
+        background: #f1f1f100 !important;
+        border-color: #f1f1f100 !important;
+    }
 
 .add-photo-btn {
     padding: 0.6rem 2rem !important;
     background-color: #309abb !important;
     border-color: #309abb !important;
 }
+
+    .add-photo-btn:hover {
+        background-color: #42b5d8 !important;
+        border-color: #42b5d8 !important;
+    }
 
 .add-photo-btn-mobile {
     width: 50px !important;
@@ -56,14 +99,18 @@ body {
     border-color: #309abb !important;
 }
 
-.horizontal-line {
-    width: 100%;
-    height: 1px;
-    background: white;
-    opacity: .2;
+.edit-album-btn-mobile {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 6px 0px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    color: #f1f1f1;
+    border-color: #cfcfcf00 !important;
 }
 
 /* #Card */
+
 .photo-item {
     overflow: hidden;
     border: none !important;
@@ -89,10 +136,51 @@ body {
 
 /* #Card-Mobile */
 
+@media only screen and (max-width: 465px) {
+    .photo-name {
+        font-size: .8rem !important;
+    }
+}
+
 @media (min-width: 200px) and (max-width: 576px) {
     .column-item {
         max-width: 50% !important;
     }
+}
+
+/* #Edit Mode */
+
+.remove-photo-btn {
+    padding: 0.6rem 2rem !important;
+    background-color: #a85353 !important;
+    border-color: #a85353 !important;
+    transition: .2s;
+    display: none;
+}
+
+    .remove-photo-btn:hover {
+        background-color: #883c3c !important;
+        border-color: #883c3c !important;
+    }
+
+.remove-photo-btn-mobile {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 6px 0px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    background-color: #a85353 !important;
+    border-color: #a85353 !important;
+}
+
+/* POP-UP */
+
+.pop-up {
+    width: 100%;
+    height: 55px;
+    background: #ffffff;
+    transition: .5s;
+    z-index: 1009;
 }
 
 /* #Footer */

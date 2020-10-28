@@ -1,0 +1,106 @@
+====================================================================================
+# Folder structure
+
+|--TS_Scripts
+	|--SubFolderName
+		|--package.json
+		|--tsconfig.json
+		|--webpack.config.js
+		|--Main.ts
+		|-- //-//.ts
+	|-- //-//.ts
+	|--tsconfig.json
+
+====================================================================================
+====================================================================================
+# Inside package.json
+
+{
+	"name": "Name",
+	"version": "1.0.0",
+	"description": "",
+	"main": "webpack.config.js",
+	"scripts": {
+		"build": "webpack",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"path": "0.12.7",
+		"ts-loader": "5.2.1",
+		"typescript": "3.8.3",
+		"webpack": "4.42.0",
+		"webpack-cli": "3.3.11",
+		"webpack-dev-server": "3.10.0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
+
+====================================================================================
+====================================================================================
+# Inside tsconfig.json
+
+{
+	"compilerOptions": {
+		"target": "ES6",       
+		"module": "commonjs",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,                   
+		"forceConsistentCasingInFileNames": true
+	}
+}
+
+====================================================================================
+====================================================================================
+# Inside webpack.config.js
+
+const path = require('path');
+module.exports = {
+    // Building mode
+    mode: 'development',
+    // Entry point of the application
+    entry: './Main.ts',
+    // Target application
+    output: {
+        path: path.resolve(__dirname, '../../Scripts/CustomScripts'),
+        filename: 'Photos.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                loader: 'ts-loader'
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+    },
+    optimization: {
+        minimize: true
+    }
+};
+
+====================================================================================
+
+====================================================================================
+# How to install (node_modules)
+
+- At the command prompt> npm install        
+	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm install
+
+====================================================================================
+
+====================================================================================
+# How to use WebPack
+
+- At the command prompt> npm run build        
+	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm run build 
+
+- A new file will be created in the folder:
+	Scripts/CustomScripts/NewFile.js
+
+====================================================================================
