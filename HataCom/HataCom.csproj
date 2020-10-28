@@ -29,6 +29,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -162,8 +163,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\CustomScripts\musicPlayer.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="TS_Scripts\PhotoAlbums\webpack.config.js" />
+    <Content Include="TS_Scripts\Photos\webpack.config.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -184,7 +186,12 @@
     <Content Include="Views\Account\UserPage.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Photo\PhotoAlbum.cshtml" />
-    <Content Include="tsconfig.json" />
+    <Content Include="TS_Scripts\Photos\package.json" />
+    <Content Include="TS_Scripts\Photos\package-lock.json" />
+    <Content Include="TS_Scripts\Photos\tsconfig.json" />
+    <Content Include="TS_Scripts\tsconfig.json" />
+    <Content Include="TS_Scripts\PhotoAlbums\tsconfig.json" />
+    <Content Include="TS_Scripts\PhotoAlbums\package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -208,11 +215,17 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="TS_Scripts\Photos.ts" />
+    <TypeScriptCompile Include="TS_Scripts\DisplaySize.ts" />
+    <TypeScriptCompile Include="TS_Scripts\PhotoAlbums\PhotoAlbumsMain.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosDomElements.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosMain.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosEdit.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosAdapt.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />

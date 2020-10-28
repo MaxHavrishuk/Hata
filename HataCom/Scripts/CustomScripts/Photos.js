@@ -1,86 +1,17 @@
-/** Album Edit */
-class PhotoAlbumEdit {
-    constructor() {
-        this.init();
-    }
-    init() {
-        document.addEventListener('DOMContentLoaded', () => {
-            const editAlbumBtn = document.querySelector('.edit-album-btn');
-            editAlbumBtn.addEventListener('click', this.editStart);
-            const popUpCancel = document.querySelector('.pop-up-cancel');
-            popUpCancel.addEventListener('click', this.editCancel);
-        });
-    }
-    editStart() {
-        const popUp = document.querySelector('.pop-up');
-        popUp.style.marginTop = '55px';
-        const addPhotoBtn = document.querySelector('.add-photo-btn');
-        addPhotoBtn.style.display = 'none';
-        const removePhotoBtn = document.querySelector('.remove-photo-btn');
-        removePhotoBtn.style.display = 'block';
-    }
-    editCancel() {
-        const popUp = document.querySelector('.pop-up');
-        popUp.style.marginTop = '-55px';
-        const addPhotoBtn = document.querySelector('.add-photo-btn');
-        addPhotoBtn.style.display = 'block';
-        const removePhotoBtn = document.querySelector('.remove-photo-btn');
-        removePhotoBtn.style.display = 'none';
-    }
-}
-/** Display size */
-class DisplaySize {
-    constructor() {
-        this.displayChange();
-    }
-    displayChange() {
-        window.addEventListener('load', () => {
-            let clientWidth = document.body.clientWidth;
-            let clientHeight = (screen.height - 55).toString() + 'px';
-            let mainContainer = document.querySelector('.main-container');
-            mainContainer.style.minHeight = clientHeight;
-            if (clientWidth < 576) {
-                this.addClass();
-            }
-            else if (clientWidth > 575) {
-                this.removeClass();
-            }
-        });
-        window.addEventListener('resize', () => {
-            let clientWidth = document.body.clientWidth;
-            let clientHeight = (screen.height - 55).toString() + 'px';
-            let mainContainer = document.querySelector('.main-container');
-            mainContainer.style.minHeight = clientHeight;
-            if (clientWidth < 576) {
-                this.addClass();
-            }
-            else if (clientWidth > 575) {
-                this.removeClass();
-            }
-        });
-    }
-    addClass() {
-        const addPhotoBtn = document.querySelector('.add-photo-btn');
-        addPhotoBtn.classList.add('add-photo-btn-mobile');
-        addPhotoBtn.innerHTML = '<i class="fas fa-plus"></i>';
-        const editAlbumBtn = document.querySelector('.edit-album-btn');
-        editAlbumBtn.classList.add('edit-album-btn-mobile');
-        editAlbumBtn.innerHTML = '<i class="fas fa-cog">';
-        const removePhotoBtn = document.querySelector('.remove-photo-btn');
-        removePhotoBtn.classList.add('remove-photo-btn-mobile');
-        removePhotoBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    }
-    removeClass() {
-        const addPhotoBtn = document.querySelector('.add-photo-btn');
-        addPhotoBtn.classList.remove('add-photo-btn-mobile');
-        addPhotoBtn.innerHTML = 'Додати фото';
-        const editAlbumBtn = document.querySelector('.edit-album-btn');
-        editAlbumBtn.classList.remove('edit-album-btn-mobile');
-        editAlbumBtn.innerHTML = '<i class="fas fa-cog mr-2"></i>' + 'Редагування';
-        const removePhotoBtn = document.querySelector('.remove-photo-btn');
-        removePhotoBtn.classList.remove('remove-photo-btn-mobile');
-        removePhotoBtn.innerHTML = 'Видалити фото';
-    }
-}
-const photoAlbumEdit = new PhotoAlbumEdit();
-const displaySize = new DisplaySize();
+!function(t){var e={};function o(n){if(e[n])return e[n].exports;var r=e[n]={i:n,l:!1,exports:{}};return t[n].call(r.exports,r,r.exports,o),r.l=!0,r.exports}o.m=t,o.c=e,o.d=function(t,e,n){o.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:n})},o.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},o.t=function(t,e){if(1&e&&(t=o(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)o.d(n,r,function(e){return t[e]}.bind(null,r));return n},o.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(e,"a",e),e},o.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},o.p="",o(o.s="./PhotosMain.ts")}({"./PhotosDomElements.ts":
+/*!******************************!*\
+  !*** ./PhotosDomElements.ts ***!
+  \******************************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass PhotosDomElements {\r\n    constructor() {\r\n        this.mainContainer = document.querySelector('.main-container');\r\n        this.addBtn = document.querySelector('.add-photo-btn');\r\n        this.editBtn = document.querySelector('.edit-album-btn');\r\n        this.removeBtn = document.querySelector('.remove-photo-btn');\r\n    }\r\n}\r\nexports.PhotosDomElements = PhotosDomElements;\r\n\n\n//# sourceURL=webpack:///./PhotosDomElements.ts?")},"./PhotosEdit.ts":
+/*!***********************!*\
+  !*** ./PhotosEdit.ts ***!
+  \***********************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass PhotosEdit {\r\n    constructor() {\r\n        this.init();\r\n    }\r\n    init() {\r\n        document.addEventListener('DOMContentLoaded', () => {\r\n            const editAlbumBtn = document.querySelector('.edit-album-btn');\r\n            editAlbumBtn.addEventListener('click', this.editStart);\r\n            const popUpCancel = document.querySelector('.pop-up-cancel');\r\n            popUpCancel.addEventListener('click', this.editCancel);\r\n        });\r\n    }\r\n    editStart() {\r\n        const popUp = document.querySelector('.pop-up');\r\n        popUp.style.marginTop = '55px';\r\n        const addPhotoBtn = document.querySelector('.add-photo-btn');\r\n        addPhotoBtn.style.display = 'none';\r\n        const removePhotoBtn = document.querySelector('.remove-photo-btn');\r\n        removePhotoBtn.style.display = 'block';\r\n    }\r\n    editCancel() {\r\n        const popUp = document.querySelector('.pop-up');\r\n        popUp.style.marginTop = '-55px';\r\n        const addPhotoBtn = document.querySelector('.add-photo-btn');\r\n        addPhotoBtn.style.display = 'block';\r\n        const removePhotoBtn = document.querySelector('.remove-photo-btn');\r\n        removePhotoBtn.style.display = 'none';\r\n    }\r\n}\r\nexports.PhotosEdit = PhotosEdit;\r\n\n\n//# sourceURL=webpack:///./PhotosEdit.ts?")},"./PhotosMain.ts":
+/*!***********************!*\
+  !*** ./PhotosMain.ts ***!
+  \***********************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval('\r\nObject.defineProperty(exports, "__esModule", { value: true });\r\nconst PhotosEdit_1 = __webpack_require__(/*! ./PhotosEdit */ "./PhotosEdit.ts");\r\nconst PhotosSize_1 = __webpack_require__(/*! ./PhotosSize */ "./PhotosSize.ts");\r\nclass PhotosMain {\r\n    constructor() {\r\n        this.init();\r\n    }\r\n    init() {\r\n        const photosEdit = new PhotosEdit_1.PhotosEdit();\r\n        const photosSize = new PhotosSize_1.PhotosSize();\r\n        photosEdit.init();\r\n        photosSize.init();\r\n    }\r\n}\r\nconst main = new PhotosMain();\r\nmain.init();\r\n\n\n//# sourceURL=webpack:///./PhotosMain.ts?')},"./PhotosSize.ts":
+/*!***********************!*\
+  !*** ./PhotosSize.ts ***!
+  \***********************/
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst PhotosDomElements_1 = __webpack_require__(/*! ./PhotosDomElements */ \"./PhotosDomElements.ts\");\r\nclass PhotosSize {\r\n    constructor() {\r\n        this.width = document.body.clientWidth;\r\n        this.height = screen.height;\r\n        this.init();\r\n    }\r\n    init() {\r\n        const photosDomElements = new PhotosDomElements_1.PhotosDomElements();\r\n        window.addEventListener('load', () => {\r\n            if (this.width < 576) {\r\n                this.addClass();\r\n            }\r\n            else if (this.width > 575) {\r\n                this.removeClass();\r\n            }\r\n        });\r\n        window.addEventListener('resize', () => {\r\n            this.width = document.body.clientWidth;\r\n            this.height = screen.height;\r\n            if (this.width < 576) {\r\n                this.addClass();\r\n            }\r\n            else if (this.width > 575) {\r\n                this.removeClass();\r\n            }\r\n        });\r\n        photosDomElements.mainContainer.style.minHeight = (this.height - 55).toString() + 'px';\r\n    }\r\n    addClass() {\r\n        const photosDomElements = new PhotosDomElements_1.PhotosDomElements();\r\n        photosDomElements.addBtn.classList.add('add-photo-btn-mobile');\r\n        photosDomElements.addBtn.innerHTML = '<i class=\"fas fa-plus\"></i>';\r\n        photosDomElements.editBtn.classList.add('edit-album-btn-mobile');\r\n        photosDomElements.editBtn.innerHTML = '<i class=\"fas fa-cog\">';\r\n        photosDomElements.removeBtn.classList.add('remove-photo-btn-mobile');\r\n        photosDomElements.removeBtn.innerHTML = '<i class=\"fas fa-trash-alt\"></i>';\r\n    }\r\n    removeClass() {\r\n        const photosDomElements = new PhotosDomElements_1.PhotosDomElements();\r\n        photosDomElements.addBtn.classList.remove('add-photo-btn-mobile');\r\n        photosDomElements.addBtn.innerHTML = 'Додати фото';\r\n        photosDomElements.editBtn.classList.remove('edit-album-btn-mobile');\r\n        photosDomElements.editBtn.innerHTML = '<i class=\"fas fa-cog mr-2\"></i>' + 'Редагування';\r\n        photosDomElements.removeBtn.classList.remove('remove-photo-btn-mobile');\r\n        photosDomElements.removeBtn.innerHTML = 'Видалити фото';\r\n    }\r\n}\r\nexports.PhotosSize = PhotosSize;\r\n\n\n//# sourceURL=webpack:///./PhotosSize.ts?")}});
