@@ -6,7 +6,7 @@
 		|--package.json
 		|--tsconfig.json
 		|--webpack.config.js
-		|--Main.ts
+		|--FileNameMain.ts
 		|-- //-//.ts
 	|-- //-//.ts
 	|--tsconfig.json
@@ -29,8 +29,7 @@
 		"ts-loader": "5.2.1",
 		"typescript": "3.8.3",
 		"webpack": "4.42.0",
-		"webpack-cli": "3.3.11",
-		"webpack-dev-server": "3.10.0"
+		"webpack-cli": "3.3.11"
 	},
 	"keywords": [],
 	"author": "",
@@ -61,11 +60,11 @@ module.exports = {
     // Building mode
     mode: 'development',
     // Entry point of the application
-    entry: './Main.ts',
+    entry: './FileNameMain.ts',
     // Target application
     output: {
         path: path.resolve(__dirname, '../../Scripts/CustomScripts'),
-        filename: 'Photos.js'
+        filename: 'FileName.js'
     },
     module: {
         rules: [
@@ -89,6 +88,9 @@ module.exports = {
 ====================================================================================
 # How to install (node_modules)
 
+- You need to have installed NodeJS
+	Link: https://nodejs.org/en/
+
 - At the command prompt> npm install        
 	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm install
 
@@ -100,7 +102,7 @@ module.exports = {
 - At the command prompt> npm run build        
 	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm run build 
 
-- A new file will be created in the folder:
+- A new file will be compiled in the folder:
 	Scripts/CustomScripts/NewFile.js
 
 ====================================================================================
