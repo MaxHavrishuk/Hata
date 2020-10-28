@@ -101,7 +101,7 @@ module.exports = {
 - At the command prompt: > npm run build        
 	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm run build 
 
-- A new file will be created in the folder:
+- A new file will be compliled in the folder:
 	Scripts/CustomScripts/NewFile.js
 
 ====================================================================================
