@@ -15,6 +15,9 @@ export class PhotosAdapt {
         const photosDomElements = new PhotosDomElements();
 
         window.addEventListener('load', () => {
+            this.width = document.body.clientWidth;
+            this.height = screen.height;
+
             if (this.width < 576) {
                 this.addClass();
             } else if (this.width > 575) {

@@ -3,10 +3,6 @@ import { PhotosAdapt } from './PhotosAdapt';
 
 class PhotosMain {
 
-    constructor() {
-        this.init();
-    }
-
     init(): void {
         const photosEdit = new PhotosEdit();
         const photosAdapt = new PhotosAdapt();
