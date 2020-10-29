@@ -215,7 +215,6 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="TS_Scripts\DisplaySize.ts" />
     <TypeScriptCompile Include="TS_Scripts\PhotoAlbums\PhotoAlbumsMain.ts" />
     <TypeScriptCompile Include="TS_Scripts\Photos\PhotosDomElements.ts" />
     <TypeScriptCompile Include="TS_Scripts\Photos\PhotosMain.ts" />
