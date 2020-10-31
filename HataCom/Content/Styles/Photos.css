@@ -78,18 +78,18 @@ body {
         border-color: #f1f1f100 !important;
     }
 
-.add-photo-btn {
+.add-photos-btn {
     padding: 0.6rem 2rem !important;
     background-color: #309abb !important;
     border-color: #309abb !important;
 }
 
-    .add-photo-btn:hover {
+    .add-photos-btn:hover {
         background-color: #42b5d8 !important;
         border-color: #42b5d8 !important;
     }
 
-.add-photo-btn-mobile {
+.add-photos-btn-mobile {
     width: 50px !important;
     height: 50px !important;
     padding: 6px 0px !important;
@@ -150,20 +150,32 @@ body {
 
 /* #Edit Mode */
 
-.remove-photo-btn {
-    padding: 0.6rem 2rem !important;
-    background-color: #a85353 !important;
-    border-color: #a85353 !important;
-    transition: .2s;
+textarea {
+    resize: none !important;
+}
+
+.album-name-editing {
+    font-size: 2rem !important;
     display: none;
 }
 
-    .remove-photo-btn:hover {
+.album-description-editing {
+    display: none;
+}
+
+.remove-photos-btn {
+    padding: 0.6rem 2rem !important;
+    background-color: #a85353 !important;
+    border-color: #a85353 !important;
+    display: none;
+}
+
+    .remove-photos-btn:hover {
         background-color: #883c3c !important;
         border-color: #883c3c !important;
     }
 
-.remove-photo-btn-mobile {
+.remove-photos-btn-mobile {
     width: 50px !important;
     height: 50px !important;
     padding: 6px 0px !important;
@@ -172,8 +184,6 @@ body {
     background-color: #a85353 !important;
     border-color: #a85353 !important;
 }
-
-/* POP-UP */
 
 .pop-up {
     width: 100%;

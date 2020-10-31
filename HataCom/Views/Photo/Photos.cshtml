@@ -30,21 +30,33 @@
         </nav>
     </div>
 
-    <!--НАЗВА АЛЬБОМУ-->
-    <div class="row justify-content-between align-items-center pl-3 pr-3 mb-3">
-        <h2 class="album-name">Альбом 1</h2>
+    <div class="row align-items-center mb-3">
+        <!--НАЗВА АЛЬБОМУ-->
+        <div class="col-6">
+            <div class="row pl-3 justify-content-start">
+                <h2 class="album-name">Альбом 1</h2>
+                <!--edit mode-->
+                <textarea class="form-control album-name-editing" rows="1">Альбом 1</textarea>
+            </div>
+        </div>
 
         <!--КНОПКА "РЕДАГУВАТИ АЛЬБОМ"-->
-        <button type="button" class="btn btn-dark edit-album-btn"><i class="fas fa-cog"></i></button>
+        <div class="col-6">
+            <div class="row pr-3 justify-content-end">
+                <button type="button" class="btn btn-dark edit-album-btn"><i class="fas fa-cog"></i></button>
+            </div>
+        </div>
     </div>
 
     <!--ОПИС АЛЬБОМУ-->
-    <div class="row pl-3 pr-3">
-        <div class="col-12 col-md-8 col-xl-6 pl-0 pr-0">
+    <div class="row">
+        <div class="col-12 col-md-8 col-xl-6">
             <p class="album-description">
                 Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи в документ або
                 презентацію, наприклад.
             </p>
+            <!--edit mode-->
+            <textarea class="form-control mb-3 album-description-editing" rows="3">Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи в документ або презентацію, наприклад.</textarea>
         </div>
     </div>
 
@@ -56,10 +68,11 @@
         <h6 class="photos-quantity">Фото (@Model.Count())</h6>
 
         <!--КНОПКА "ДОДАТИ ФОТО"-->
-        <button type="button" class="btn btn-dark add-photo-btn"></button>
+        <button type="button" class="btn btn-dark add-photos-btn"></button>
 
+        <!--edit mode-->
         <!--КНОПКА "ВИДАЛИТИ ФОТО"-->
-        <button type="button" class="btn btn-dark remove-photo-btn"></button>
+        <button type="button" class="btn btn-dark remove-photos-btn" disabled></button>
     </div>
 
     <!--СПІЛЬНИЙ РЯДОК ДЛЯ ВІДОБРАЖЕННЯ ФОТО-->

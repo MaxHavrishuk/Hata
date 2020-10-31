@@ -1,3 +1,5 @@
+import { PhotosDomElements } from './PhotosDomElements';
+
 export class PhotosEdit {
 
     constructor() {
@@ -6,33 +8,31 @@ export class PhotosEdit {
 
     init(): void {
         document.addEventListener('DOMContentLoaded', () => {
-            const editAlbumBtn = document.querySelector('.edit-album-btn') as HTMLDivElement;
-            editAlbumBtn.addEventListener('click', this.editStart);
-
-            const popUpCancel = document.querySelector('.pop-up-cancel') as HTMLDivElement;
-            popUpCancel.addEventListener('click', this.editCancel);
+            const photosDomElements = new PhotosDomElements();
+            photosDomElements.editBtn.addEventListener('click', this.editStart);
+            photosDomElements.popUpCancel.addEventListener('click', this.editCancel);
         });
     }
 
-    editStart(): void {
-        const popUp = document.querySelector('.pop-up') as HTMLDivElement;
-        popUp.style.marginTop = '55px';
-
-        const addPhotoBtn = document.querySelector('.add-photo-btn') as HTMLDivElement;
-        addPhotoBtn.style.display = 'none';
-
-        const removePhotoBtn = document.querySelector('.remove-photo-btn') as HTMLDivElement;
-        removePhotoBtn.style.display = 'block';
+    editStart(): void { 
+        const photosDomElements = new PhotosDomElements();
+        photosDomElements.popUp.style.marginTop = '55px';
+        photosDomElements.albumName.style.display = 'none';
+        photosDomElements.albumNameEditing.style.display = 'block';
+        photosDomElements.albumDescription.style.display = 'none';
+        photosDomElements.albumDescriptionEditing.style.display = 'block';
+        photosDomElements.addBtn.style.display = 'none';
+        photosDomElements.removeBtn.style.display = 'block';
     }
 
     editCancel(): void {
-        const popUp = document.querySelector('.pop-up') as HTMLDivElement;
-        popUp.style.marginTop = '-55px';
-
-        const addPhotoBtn = document.querySelector('.add-photo-btn') as HTMLDivElement;
-        addPhotoBtn.style.display = 'block';
-
-        const removePhotoBtn = document.querySelector('.remove-photo-btn') as HTMLDivElement;
-        removePhotoBtn.style.display = 'none';
+        const photosDomElements = new PhotosDomElements();
+        photosDomElements.popUp.style.marginTop = '-55px';
+        photosDomElements.albumName.style.display = 'block';
+        photosDomElements.albumNameEditing.style.display = 'none';
+        photosDomElements.albumDescription.style.display = 'block';
+        photosDomElements.albumDescriptionEditing.style.display = 'none';
+        photosDomElements.addBtn.style.display = 'block';
+        photosDomElements.removeBtn.style.display = 'none';
     }
 }

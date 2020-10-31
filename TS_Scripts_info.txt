@@ -6,7 +6,7 @@
 		|--package.json
 		|--tsconfig.json
 		|--webpack.config.js
-		|--Main.ts
+		|--FileNameMain.ts
 		|-- //-//.ts
 	|-- //-//.ts
 	|--tsconfig.json
@@ -88,20 +88,21 @@ module.exports = {
 ====================================================================================
 # How to install (node_modules)
 
+- You need to have installed NodeJS
+	Link: https://nodejs.org/en/
+
 - At the command prompt> npm install        
 	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm install
-	
-- "node_modules" folder will be created in the "SubFolderName"
 
 ====================================================================================
 
 ====================================================================================
 # How to use WebPack
 
-- At the command prompt: > npm run build        
+- At the command prompt> npm run build        
 	Example: C:\Users\User\source\repos\Hata\HataCom\TS_Scripts\SubFolderName>npm run build 
 
-- A new file will be compliled in the folder:
+- A new file will be compiled in the folder:
 	Scripts/CustomScripts/NewFile.js
 
 ====================================================================================
