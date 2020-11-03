@@ -1,7 +1,8 @@
 ﻿/* #Body */
 
 body {
-    background: linear-gradient(#3d5768, #3c6273);
+    background: rgb(36,58,96);
+    background: linear-gradient(90deg, rgba(36,58,96,1) 0%, rgba(47,95,120,1) 50%, rgba(36,58,96,1) 100%);
 }
 
 /* #Header */
