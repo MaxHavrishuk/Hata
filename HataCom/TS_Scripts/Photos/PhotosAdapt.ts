@@ -8,7 +8,6 @@ export class PhotosAdapt {
     constructor() {
         this.width = document.body.clientWidth;
         this.height = screen.height;
-        this.init();
     }
 
     init(): void {

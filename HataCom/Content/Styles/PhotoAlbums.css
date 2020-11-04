@@ -2,7 +2,7 @@
 
 body {
     background: rgb(36,58,96);
-    background: linear-gradient(90deg, rgba(36,58,96,1) 0%, rgba(47,95,120,1) 50%, rgba(36,58,96,1) 100%);
+    background: linear-gradient(90deg, rgba(36,58,96,1) 0%, rgba(12,78,113,1) 50%, rgba(36,58,96,1) 100%);
 }
 
 /* #Header */
@@ -61,6 +61,13 @@ body {
     text-align: center !important;
     background-color: #009688 !important;
     border-color: #009688 !important;
+}
+
+.horizontal-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.10127801120448177) 0%, rgba(255, 255, 255, 0.7483368347338936) 50%, rgba(255, 255, 255, 0.10407913165266103) 100%);
+    opacity: .2;
 }
 
 /* #Card */
@@ -238,7 +245,5 @@ body {
 /* #Footer */
 
 .footer {
-    margin-top: 400px;
-    bottom: 0;
     color: white;
 }

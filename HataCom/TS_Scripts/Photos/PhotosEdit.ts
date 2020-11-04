@@ -2,10 +2,6 @@ import { PhotosDomElements } from './PhotosDomElements';
 
 export class PhotosEdit {
 
-    constructor() {
-        this.init();
-    }
-
     init(): void {
         document.addEventListener('DOMContentLoaded', () => {
             const photosDomElements = new PhotosDomElements();
