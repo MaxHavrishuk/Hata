@@ -166,15 +166,15 @@ textarea {
 
 .remove-photos-btn {
     padding: 0.6rem 2rem !important;
-    background-color: #a85353 !important;
-    border-color: #a85353 !important;
+   /* background-color: #a85353 !important;
+    border-color: #a85353 !important;*/
     display: none;
 }
 
-    .remove-photos-btn:hover {
+    /*.remove-photos-btn:hover {
         background-color: #883c3c !important;
         border-color: #883c3c !important;
-    }
+    }*/
 
 .remove-photos-btn-mobile {
     width: 50px !important;
@@ -182,8 +182,8 @@ textarea {
     padding: 6px 0px !important;
     border-radius: 50px !important;
     text-align: center !important;
-    background-color: #a85353 !important;
-    border-color: #a85353 !important;
+    /*background-color: #a85353 !important;
+    border-color: #a85353 !important;*/
 }
 
 .pop-up {
