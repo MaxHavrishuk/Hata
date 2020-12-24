@@ -27,6 +27,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 </ul>
                 <div class="nav-item dropdown">
+<<<<<<< Updated upstream
                     <a class="nav-link account" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         <!-- User name & photo -->
@@ -40,6 +41,34 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+=======
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link account" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!--ІМ'Я ТА ФОТО КОРИСТУВАЧА-->
+                            <span class="mr-2">@User.Identity.Name</span>
+                            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQGO23znCVYpSA/profile-displayphoto-shrink_200_200/0?e=1610582400&v=beta&t=HZ9f5flmP9nu1TezFes0pCm1NsttVz59F6_gcnBhLQw"
+                                 class="user-image" alt="...">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Account/SignOut">Sign Out</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <a class="nav-link account" href="/Account/SignIn" role="button"
+                          aria-haspopup="true" aria-expanded="false">
+                            <!--ІМ'Я ТА ФОТО КОРИСТУВАЧА-->
+                            <span class="mr-2">Sig In</span>
+                            <img src="https://www.iconarchive.com/download/i91933/icons8/windows-8/User-Interface-Login.ico"
+                                 class="user-image" alt="...">
+                        </a>
+                    }
+
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>
