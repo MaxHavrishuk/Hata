@@ -1,4 +1,10 @@
-/* #Header */
+.navbar {
+    z-index: 2001;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+}
 
 .user-image {
     width: 30px;

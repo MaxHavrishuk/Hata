@@ -85,51 +85,55 @@
 
         <!--ALBUM ITEM-->
         @foreach (var item in Model.PhotoAlbums)
-            {
-                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
-                    <div class="card album-item mt-5 shadow">
-                        <a href="/Photo/Photos/@item.PhotoAlbumId" class="album-link">
-                            <div class="embed-responsive embed-responsive-1by1 image-wrp">
-                                <img src="@item.IconLink"
-                                     class="card-img-top embed-responsive-item album-cover-img"
-                                     alt="">
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <div class="row album-name-row">
-                                <h5 class="card-title">
-                                    @item.Title
-                                </h5>
-                            </div>
-                            <div class="row album-description-row">
-                                <p class="card-text album-description">
-                                    @item.Description
-                                </p>
-                            </div>
+        {
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
+                <div class="card album-item mt-5 shadow">
+                    <a href="/Photo/Photos/@item.PhotoAlbumId" class="album-link">
+                        <div class="embed-responsive embed-responsive-1by1 image-wrp">
+                            <img src="@item.IconLink"
+                                 class="card-img-top embed-responsive-item album-cover-img"
+                                 alt="">
                         </div>
-                        <div class="btn-group dropup">
-                            <button type="button"
-                                    class="btn btn-light btn-sm card-btn-settings"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Photo/DeletePhotoAlbum/@item.PhotoAlbumId">Видалити Альбом</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                    </a>
+                    <div class="card-body">
+                        <div class="row album-name-row">
+                            <h5 class="card-title">
+                                @item.Title
+                            </h5>
+                        </div>
+                        <div class="row album-description-row">
+                            <p class="card-text album-description">
+                                @item.Description
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn-group dropup">
+                        <button type="button"
+                                class="btn btn-light btn-sm card-btn-settings"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/Photo/DeletePhotoAlbum/@item.PhotoAlbumId">Видалити Альбом</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </div>
                 </div>
-            }
+            </div>
+        }
 
     </div>
 </div>
 
+<!-- ФУТЕР -->
 <div class="container-fluid text-center mt-5 footer">
-    <hr />
+
+    <!-- ГОРИЗОНТАЛЬНА ЛІНІЯ -->
+    <div class="mb-3 horizontal-line"></div>
+
     <footer>
         <p>© 2020 - HATA</p>
     </footer>

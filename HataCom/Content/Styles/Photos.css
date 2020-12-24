@@ -1,40 +1,20 @@
 ﻿/* #Body */
 
 body {
-    background: linear-gradient(#3d5768, #3c6273);
+    background: rgb(36, 58, 96);
+    background: linear-gradient(90deg, rgba(36, 58, 96, 1) 0%, rgba(12, 78, 113, 1) 50%, rgba(36, 58, 96, 1) 100%);
 }
-
-/* #Header */
-
-/*.bg-light {
-    background: #f2c474 !important;
-}*/
-
-.navbar {
-    z-index: 1010;
-}
-
-/*.navbar-brand {
-    color: #262d35 !important;
-    font-weight: bold !important;
-}*/
-
-/*.nav-link {
-    font-weight: 500 !important;
-}*/
 
 .user-image {
     width: 30px;
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 50% !important;
-    /*border: #262d35 1px solid;*/
 }
 
 .account {
     padding: 0 !important;
     text-decoration: none !important;
-    /*color: #262d35 !important;*/
 }
 
 /* #Breadcrumb */
@@ -70,6 +50,7 @@ body {
     background: transparent !important;
     color: #f1f1f1 !important;
     border-color: #f1f1f100 !important;
+    box-shadow: none !important;
 }
 
     .edit-album-btn:hover {
@@ -82,6 +63,7 @@ body {
     padding: 0.6rem 2rem !important;
     background-color: #309abb !important;
     border-color: #309abb !important;
+    box-shadow: none !important;
 }
 
     .add-photos-btn:hover {
@@ -111,38 +93,43 @@ body {
 
 /* #Card */
 
+.column-item {
+    transition: .3s;
+}
+
 .photo-item {
     overflow: hidden;
     border: none !important;
+}
+
+.link-active {
+    z-index: 1020;
 }
 
 .photo-img {
     object-fit: cover !important;
 }
 
-.photo-gradient {
-    position: absolute !important;
-    min-width: 100% !important;
-    min-height: 35% !important;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4962359943977591) 67%, rgba(0, 0, 0, 0.700717787114846) 100%) !important;
-    color: transparent !important;
-    z-index: 1000 !important;
+.checkbox-remove {
+    position: absolute;
+    z-index: 1002;
+    display: none;
 }
 
 .photo-name-wrp {
+    min-width: 100% !important;
     padding: 0.7rem 1rem !important;
     z-index: 1001 !important;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.466) 0%, rgba(0, 0, 0, 0.205) 20%, rgba(0, 0, 0, 0) 100%);
+}
+
+.photo-name {
+    margin-bottom: 0 !important;
 }
 
 /* #Card-Mobile */
 
-@media only screen and (max-width: 465px) {
-    .photo-name {
-        font-size: .8rem !important;
-    }
-}
-
-@media (min-width: 200px) and (max-width: 576px) {
+@media (min-width: 500px) and (max-width: 576px) {
     .column-item {
         max-width: 50% !important;
     }
@@ -163,34 +150,68 @@ textarea {
     display: none;
 }
 
-.remove-photos-btn {
-    padding: 0.6rem 2rem !important;
-    background-color: #a85353 !important;
-    border-color: #a85353 !important;
+.album-name-label {
     display: none;
 }
 
-    .remove-photos-btn:hover {
-        background-color: #883c3c !important;
-        border-color: #883c3c !important;
-    }
+.album-description-label {
+    display: none;
+}
 
-.remove-photos-btn-mobile {
-    width: 50px !important;
-    height: 50px !important;
+.photo-name-editing {
+    display: none;
+    z-index: 2030;
+}
+
+.pop-up-remove-btn {
+    padding: 0.4rem 2rem !important;
+    box-shadow: none !important;
+}
+
+.pop-up-remove-btn-mobile {
+    width: 40px !important;
+    height: 40px !important;
     padding: 6px 0px !important;
     border-radius: 50px !important;
     text-align: center !important;
-    background-color: #a85353 !important;
-    border-color: #a85353 !important;
 }
 
 .pop-up {
     width: 100%;
     height: 55px;
-    background: #ffffff;
-    transition: .5s;
+    background: #f3d39c;
+    transition: .3s;
     z-index: 1009;
+}
+
+.pop-up-cancel {
+    background: transparent !important;
+    border-color: transparent !important;
+    outline: transparent !important;
+    color: black !important;
+    font-size: 1.7rem !important;
+    box-shadow: none !important;
+}
+
+.pop-up-save {
+    padding: 0.4rem 2rem !important;
+    box-shadow: none !important;
+}
+
+.pop-up-cancel-mobile {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 6px 0px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+}
+
+.pop-up-save-mobile {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 6px 0px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
 }
 
 /* #Footer */

@@ -28,7 +28,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -140,6 +140,7 @@
     <Compile Include="Providers\UserRolesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\hata-logo.svg" />
     <Content Include="Content\img\Img1.jpg" />
     <Content Include="Content\img\Img2.jpg" />
     <Content Include="Content\img\Img3.jpg" />
@@ -187,11 +188,11 @@
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Photo\PhotoAlbum.cshtml" />
     <Content Include="TS_Scripts\Photos\package.json" />
-    <Content Include="TS_Scripts\Photos\package-lock.json" />
     <Content Include="TS_Scripts\Photos\tsconfig.json" />
     <Content Include="TS_Scripts\tsconfig.json" />
     <Content Include="TS_Scripts\PhotoAlbums\tsconfig.json" />
     <Content Include="TS_Scripts\PhotoAlbums\package.json" />
+    <Content Include="TS_Scripts\Photos\package-lock.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -216,10 +217,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="TS_Scripts\PhotoAlbums\PhotoAlbumsMain.ts" />
-    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosDomElements.ts" />
-    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosMain.ts" />
-    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosEdit.ts" />
     <TypeScriptCompile Include="TS_Scripts\Photos\PhotosAdapt.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosAdd.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosDomElements.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosEdit.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosInterfaces.ts" />
+    <TypeScriptCompile Include="TS_Scripts\Photos\PhotosMain.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
