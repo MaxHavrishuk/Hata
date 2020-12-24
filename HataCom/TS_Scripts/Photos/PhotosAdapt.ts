@@ -48,8 +48,12 @@ export class PhotosAdapt {
         photosDomElements.editBtn.classList.add('edit-album-btn-mobile');
         photosDomElements.editBtn.innerHTML = '<i class="fas fa-cog">';
 
-        photosDomElements.removeBtn.classList.add('remove-photos-btn-mobile');
-        photosDomElements.removeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        photosDomElements.popUpRemove.classList.add('pop-up-remove-btn-mobile');
+        photosDomElements.popUpRemove.innerHTML = '<i class="fas fa-trash-alt"></i>';
+
+        photosDomElements.popUpSave.classList.add('pop-up-save-mobile');
+        photosDomElements.popUpSave.classList.add('ml-3');
+        photosDomElements.popUpSave.innerHTML = '<i class="fas fa-save"></i>';
     }
 
     /** Remove mobile mode classes */
@@ -61,7 +65,10 @@ export class PhotosAdapt {
         photosDomElements.editBtn.classList.remove('edit-album-btn-mobile');
         photosDomElements.editBtn.innerHTML = '<i class="fas fa-cog mr-2"></i>' + 'Редагування';
 
-        photosDomElements.removeBtn.classList.remove('remove-photos-btn-mobile');
-        photosDomElements.removeBtn.innerHTML = 'Видалити фото';
+        photosDomElements.popUpRemove.classList.remove('pop-up-remove-btn-mobile');
+        photosDomElements.popUpRemove.innerHTML = '<i class="fas fa-trash-alt mr-2"></i>' + 'Видалити фото';
+
+        photosDomElements.popUpSave.classList.remove('pop-up-save-mobile');
+        photosDomElements.popUpSave.innerHTML = '<i class="fas fa-save mr-2"></i>' + 'Зберегти';
     }
 }

@@ -6,101 +6,102 @@
     ViewBag.Title = "View";
 }
 
-<!-- ПОП-АП -->
-<div class="fixed-top pop-up" style="margin-top: -55px;">
+<!-- PopUp -->
+<div class="fixed-top pop-up" style="margin-top: -100px;">
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <div class="row pl-3 mt-3">
-                    <h5><i class="fas fa-cog mr-2"></i>Редагування</h5>
+            <div class="col-4 col-sm-3 col-xl-4">
+                <div class="row">
+                    <!-- "Cancel" button -->
+                    <button class="btn btn-secondary pop-up-cancel"><i class="fas fa-times"></i></button>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-8 col-sm-9 col-xl-8">
                 <div class="row pr-3 mt-2 justify-content-end">
-                    <div class="btn btn-secondary mr-2 pop-up-cancel">Скасувати</div>
-                    <div class="btn btn-success">Зберегти</div>
+                    <!-- "Save" button -->
+                    <button class="btn btn-success pop-up-save" disabled>
+                        <i class="fas fa-save mr-2"></i>Зберегти
+                    </button>
+                    <!-- "Remove photo" button -->
+                    <button type="button" class="btn btn-danger ml-3 pop-up-remove-btn" disabled>
+                        <i class="fas fa-trash-alt mr-2"></i>Видалити фото
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!--СПІЛЬНИЙ КОНТЕЙНЕР "ФОТО"-->
+<!-- "Photos" main container -->
 <div class="container main-container" style="margin-top: 55px;">
 
-    <!--ХЛІБНІ КРИХТИ"-->
-    <div class="row">
+    <!-- Breadcrumb -->
+    <div class="row breadcrumbs">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Home/Index" class="breadcrumb-item">Головна</a></li>
                 <li class="breadcrumb-item"><a href="/Photo/PhotoAlbum" class="breadcrumb-item">Фото</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Test Album</li>
+                <li class="breadcrumb-item active" aria-current="page">Новий альбо...</li>
             </ol>
         </nav>
     </div>
 
     <div class="row align-items-center mb-3">
-        <!--НАЗВА АЛЬБОМУ-->
-        <div class="col-6">
-            <div class="row pl-3 justify-content-start">
-                <h2 class="album-name">Альбом 1</h2>
-                <!--edit mode-->
-                <textarea class="form-control album-name-editing" rows="1">Альбом 1</textarea>
+        <!-- Album name -->
+        <div class="col-9 col-sm-8 col-xl-9">
+            <div class="row pl-3 pr-3 justify-content-start">
+                <h2 class="album-name">Це новий альбом спогадів та яскравих моментів</h2>
+                <!-- Edit mode -->
+                <label class="text-white album-name-label" for="albumName">Назва</label>
+                <textarea class="form-control album-name-editing" id="albumName" rows="2"></textarea>
             </div>
         </div>
 
-        <!--КНОПКА "РЕДАГУВАТИ АЛЬБОМ"-->
-        <div class="col-6">
+        <!--"Edit album" button -->
+        <div class="col-3 col-sm-4 col-xl-3">
             <div class="row pr-3 justify-content-end">
                 <button type="button" class="btn btn-dark edit-album-btn"><i class="fas fa-cog"></i></button>
             </div>
         </div>
     </div>
 
-    <!--ОПИС АЛЬБОМУ-->
+    <!-- Album description -->
     <div class="row">
         <div class="col-12 col-md-8 col-xl-6">
             <p class="album-description">
-                Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи в документ або
-                презентацію, наприклад.
+                Альбом наповнений найтеплішими спогадами і яскравими моментами з найкрутіших вечірок галактики
             </p>
-            <!--edit mode-->
-            <textarea class="form-control mb-3 album-description-editing" rows="3">Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи в документ або презентацію, наприклад.</textarea>
+            <!-- Edit mode -->
+            <label class="text-white album-description-label" for="albumDescription">Опис</label>
+            <textarea class="form-control mb-3 album-description-editing" id="albumDescription" rows="3"></textarea>
         </div>
     </div>
 
-    <!-- ГОРИЗОНТАЛЬНА ЛІНІЯ -->
+    <!-- Horizontal line -->
     <div class="mb-4 horizontal-line"></div>
 
-    <!--КІЛЬКІСТЬ ФОТО-->
+    <!-- Photos quantity -->
     <div class="row justify-content-between align-items-center pl-3 pr-3 mb-4">
-        <h6 class="photos-quantity">Фото (@Model.Count())</h6>
-
-        <!--КНОПКА "ДОДАТИ ФОТО"-->
+        <h6 class="photos-quantity">Фото ()</h6>
+        <!-- "Add photo" button -->
         <button type="button" class="btn btn-dark add-photos-btn"></button>
-
-        <!--edit mode-->
-        <!--КНОПКА "ВИДАЛИТИ ФОТО"-->
-        <button type="button" class="btn btn-dark remove-photos-btn" disabled></button>
     </div>
 
-    <!--СПІЛЬНИЙ РЯДОК ДЛЯ ВІДОБРАЖЕННЯ ФОТО-->
-    <div class="row photo-list"></div>
-
-    <!--СПІЛЬНИЙ РЯДОК ДЛЯ ВІДОБРАЖЕННЯ ФОТО-->
+    <!-- Photos list -->
     <div class="row photo-list">
         @foreach (var item in Model)
         {
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 column-item">
-                <a data-fancybox="gallery" href="@item.ImageLink">
-                    <div class="card bg-dark text-white shadow mb-5 photo-item">
-                        <div class="row ml-0 photo-gradient"></div>
+                <input type="checkbox" class="mt-3 ml-3 checkbox-remove" id="@item.PhotoId">
+                <a data-fancybox="gallery" href="@item.ImageLink" class="photo-link">
+                    <div class="card bg-dark text-white mb-5 shadow photo-item">
                         <div class="embed-responsive embed-responsive-4by3">
                             <img src="@item.ImageLink"
                                  class="card-img embed-responsive-item photo-img" alt="...">
                         </div>
-                        <div class="card-img-overlay photo-name-wrp">
+                        <div class="card-img-overlay d-flex align-items-end photo-name-wrp">
                             <h6 class="card-title photo-name">@item.Title</h6>
+                            <textarea class="form-control photo-name-editing" data-id="@item.PhotoId" rows="2"></textarea>
                         </div>
                     </div>
                 </a>
@@ -109,12 +110,11 @@
     </div>
 </div>
 
-<!-- ФУТЕР -->
+<!-- Footer -->
 <div class="container-fluid text-center mt-5 footer">
 
-    <!-- ГОРИЗОНТАЛЬНА ЛІНІЯ -->
+    <!-- Horizontal line -->
     <div class="mb-3 horizontal-line"></div>
-
     <footer>
         <p>© 2020 - HATA</p>
     </footer>
