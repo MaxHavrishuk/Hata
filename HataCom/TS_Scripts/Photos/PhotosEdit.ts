@@ -224,7 +224,10 @@ export class PhotosEdit {
                     i--;
                 }
             }
-            console.log('Data to save:', dataToEdit);
+            const toSend = JSON.stringify(dataToEdit);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Photo/Upload', true);
+            xhr.send(toSend);
         });
     }
 
