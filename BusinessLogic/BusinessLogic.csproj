@@ -106,10 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogicMethods\AccountLogic.cs" />
+    <Compile Include="BusinessLogicMethods\OAuthLogic.cs" />
     <Compile Include="BusinessLogicMethods\SHA.cs" />
     <Compile Include="Models\Authorization\Role.cs" />
     <Compile Include="Models\Authorization\SignIn.cs" />
     <Compile Include="Models\Authorization\RegisterModel.cs" />
+    <Compile Include="Models\Authorization\UserOpenAuthModel.cs" />
     <Compile Include="Models\EnumsAndLists\EnumsAndLists.cs" />
     <Compile Include="Models\Authorization\UserModel.cs" />
     <Compile Include="Models\JSON Deserialize Models\PhotoUploadModel.cs" />

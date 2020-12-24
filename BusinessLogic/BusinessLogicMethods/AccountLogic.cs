@@ -13,7 +13,7 @@ namespace BusinessLogic.BusinessLogicMethods
 {
 	public class AccountLogic
 	{
-		HataContext db = new HataContext();
+		private HataContext db = new HataContext();
 
 		public UserModel SignIn(SignIn signIn)
 		{

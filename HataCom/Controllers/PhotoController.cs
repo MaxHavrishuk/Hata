@@ -23,7 +23,6 @@ namespace HataCom.Controllers
 		public ActionResult PhotoAlbum()
 		{
 			AddAlbumView addAlbumView = new AddAlbumView();
-
 			addAlbumView.PhotoAlbums = photoAlbumsDb.GetAll();
 			
 			return View(addAlbumView);
@@ -83,9 +82,10 @@ namespace HataCom.Controllers
 		public ActionResult Photos(int Id)
 		{
 
-			var photos = photosDb.GetPhotosByAlbumId(Id);
+			IEnumerable<Photo> photos = photosDb.GetPhotosByAlbumId(Id);
 			if (photos.Any())
 			{
+				ViewBag.AlbumTitle = photoAlbumsDb.Get(Id).Title;
 				return View(photos);
 			}
 			else

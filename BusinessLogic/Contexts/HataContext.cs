@@ -30,8 +30,13 @@ namespace BusinessLogic.Contexts
 		
 		public DbSet<UserModel> Users { get; set; }
 
+		//Таблиця користувачів з зовнішньою OpenAuth аутентифікацією (goodle, fb, etc)
+		public DbSet<UserOpenAuthModel> OpenAuthUsers { get; set; }
+
 		//Таблиця з ролями користувачів
 		public DbSet<Role> Roles { get; set; }
+
+		
 
 	}
 
