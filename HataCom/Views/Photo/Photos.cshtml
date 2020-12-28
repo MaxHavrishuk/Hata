@@ -2,17 +2,12 @@
 
 @Styles.Render("~/PhotosPage/css")
 
-<<<<<<< Updated upstream
 @{
     ViewBag.Title = "View";
 }
 
 <!-- PopUp -->
 <div class="fixed-top pop-up" style="margin-top: -100px;">
-=======
-<!-- ПОП-АП -->
-<div class="fixed-top pop-up" style="margin-top: -55px;">
->>>>>>> Stashed changes
     <div class="container">
         <div class="row">
             <div class="col-4 col-sm-3 col-xl-4">
@@ -46,17 +41,12 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Home/Index" class="breadcrumb-item">Головна</a></li>
                 <li class="breadcrumb-item"><a href="/Photo/PhotoAlbum" class="breadcrumb-item">Фото</a></li>
-<<<<<<< Updated upstream
                 <li class="breadcrumb-item active" aria-current="page">Новий альбо...</li>
-=======
-                <li class="breadcrumb-item active" aria-current="page">@ViewBag.AlbumTitle</li>
->>>>>>> Stashed changes
             </ol>
         </nav>
     </div>
 
     <div class="row align-items-center mb-3">
-<<<<<<< Updated upstream
         <!-- Album name -->
         <div class="col-9 col-sm-8 col-xl-9">
             <div class="row pl-3 pr-3 justify-content-start">
@@ -64,14 +54,6 @@
                 <!-- Edit mode -->
                 <label class="text-white album-name-label" for="albumName">Назва</label>
                 <textarea class="form-control album-name-editing" id="albumName" rows="2"></textarea>
-=======
-        <!--НАЗВА АЛЬБОМУ-->
-        <div class="col-6">
-            <div class="row pl-3 justify-content-start">
-                <h2 class="album-name">@ViewBag.AlbumTitle</h2>
-                <!--edit mode-->
-                <textarea class="form-control album-name-editing" rows="1">@ViewBag.AlbumTitle</textarea>
->>>>>>> Stashed changes
             </div>
         </div>
 
