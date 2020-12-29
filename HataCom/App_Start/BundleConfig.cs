@@ -25,7 +25,10 @@ namespace HataCom
 					  "~/Content/Styles/MainPage.css"
 					  ));
 
-			
+			//Auth Page styles CSS
+			bundles.Add(new StyleBundle("~/AuthPage/css").Include(
+					  "~/Content/Styles/Auth.css"
+					  ));
 
 			//PhotoAlbums Page styles CSS
 			bundles.Add(new StyleBundle("~/PhotoAlbumsPage/css").Include(
@@ -41,6 +44,10 @@ namespace HataCom
 
 
 			//SCRIPTS FOR SITE BEGIN
+			//PhotoAlbums Script
+			bundles.Add(new ScriptBundle("~/Auth.js").Include(
+				"~/Scripts/CustomScripts/Auth.js"));
+
 			//PhotoAlbums Script
 			bundles.Add(new ScriptBundle("~/PhotoAlbums.js").Include(
 				"~/Scripts/CustomScripts/PhotoAlbums.js"));

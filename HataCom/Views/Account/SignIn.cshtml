@@ -1,9 +1,116 @@
 ﻿@model BusinessLogic.Models.SignIn
 
+@Styles.Render("~/AuthPage/css")
+
 @{
     <h1>@ViewBag.Title</h1>
 
 }
+
+<!-- Background image -->
+<div class="fixed-top bg-image"></div>
+
+<!-- "Auth" main container -->
+<div class="container main-container" style="margin-top: 56px;">
+    <div class="row" style="margin-top: 70px;">
+        <div class="col-12 col-lg-7">
+            <div class="d-flex align-content-center flex-wrap head-text">
+                <div class="row welcome-text-main">
+                    <h1>Вітаємо на сайті ХАТА!</h1>
+                </div>
+                <div class="row welcome-text-second">
+                    <p>Заходьте у гості!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5 column-wrp">
+            <div class="form-wrp">
+                <h2 class="form-header">Вхід</h2>
+                <div class="row mt-4">
+                    <div class="col-3">
+                        <a href="#" class="form-link signin-link active-link">УВІЙТИ</a>
+                    </div>
+                    <div class="col-9 text-center">
+                        <a href="#" class="form-link signup-link">ЗАРЕЄСТРУВАТИСЬ</a>
+                    </div>
+                </div>
+                <!-- Sign in form -->
+                <form class="mt-5 signin-form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Електронна адреса">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Пароль">
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Запам'ятати мене</label>
+                            </div>
+                        </div>
+                        <div class="col text-right">
+                            <a href="#" class="forget-password">Забули пароль?</a>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3 submit-btn">Увійти</button>
+                    <div class="row mt-4 justify-content-center">
+                        <h6 class="alternative-text">Або увійти за допомогою</h6>
+                    </div>
+                    <a class="btn btn-outline-light w-100 mt-3 social-btn" href="/Account/RedirectToGoogle"
+                       role="button"><img class="mr-2" src="~/Content/img/Google.svg">Продовжити з Google</a>
+                    <a class="btn btn-outline-light w-100 mt-4 social-btn" href="https://www.facebook.com/"
+                       role="button"><img class="mr-2" src="~/Content/img/Facebook.svg">Продовжити з Facebook</a>
+                </form>
+                <!-- Sign up form -->
+                <form class="mt-5 signup-form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Електронна адреса">
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" aria-describedby="emailHelp"
+                                       placeholder="Ім'я">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" aria-describedby="emailHelp"
+                                       placeholder="Прізвище">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Пароль">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Підтвердіть пароль">
+                    </div>
+                    <div class="row mt-4">
+                        <h6 class="birth-text">Дата народження</h6>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-12">
+                            <input class="form-control birth-date" type="date" value="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3 submit-btn">Зареєструватись</button>
+                    <div class="row mt-4 justify-content-center">
+                        <h6 class="alternative-text">Або увійти за допомогою</h6>
+                    </div>
+                    <a class="btn btn-outline-light w-100 mt-3 social-btn" href="/Account/RedirectToGoogle"
+                       role="button"><img class="mr-2" src="~/Content/img/Google.svg">Продовжити з Google</a>
+                    <a class="btn btn-outline-light w-100 mt-4 social-btn" href="https://www.facebook.com/"
+                       role="button"><img class="mr-2" src="~/Content/img/Facebook.svg">Продовжити з Facebook</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h3>Login Using External Provider</h3>
 
 @Html.ActionLink("Login Using Google", "RedirectToGoogle")
@@ -40,3 +147,15 @@
         </div>
     </div>
 }
+
+<!-- Footer -->
+<div class="container-fluid text-center mt-5 text-white">
+
+    <!-- Horizontal line -->
+    <div class="mb-3 horizontal-line"></div>
+    <footer>
+        <p>© 2020 - HATA</p>
+    </footer>
+</div>
+
+@Scripts.Render("~/Auth.js")

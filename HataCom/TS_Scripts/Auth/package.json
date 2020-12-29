@@ -1,5 +1,5 @@
 {
-  "name": "photos",
+  "name": "auth",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
