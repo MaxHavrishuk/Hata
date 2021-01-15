@@ -68,7 +68,7 @@ namespace BusinessLogic.DbInitialize
 			}
 
 
-			db.PhotoAlbums.Add(new PhotoAlbum() { Title = "Test1", UserId = 1, Photos = photos, IconLink = albumICo1, Description = testDesription });
+			db.PhotoAlbums.Add(new PhotoAlbum() { Title = "Назва Альбому", UserId = 1, Photos = photos, IconLink = albumICo1, Description = " Альбом наповнений найтеплішими спогадами і яскравими моментами з найкрутіших вечірок галактики" });
 			//context.Photos.AddRange(new List<Photo>(photos));
 
 
@@ -85,7 +85,7 @@ namespace BusinessLogic.DbInitialize
 				});
 			}
 
-			db.PhotoAlbums.Add(new PhotoAlbum() { Title = "Test2", UserId = 1, Photos = photos1, IconLink = albumICo2, Description = testDesription });
+			db.PhotoAlbums.Add(new PhotoAlbum() { Title = "Назва Альбому 2", UserId = 1, Photos = photos1, IconLink = albumICo2, Description = testDesription });
 			//context.Photos.AddRange(new List<Photo>(photos1));
 
 			//context.Photos.Add(new Photo() { ImageLink = "/Content/img/TestAlbum/2.jpg", Title = "Test", UserId = 1,  });

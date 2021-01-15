@@ -339,4 +339,3 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 HataCom/TS_Scripts/Photos/package-lock.json
-HataCom/TS_Scripts/Auth/package-lock.json

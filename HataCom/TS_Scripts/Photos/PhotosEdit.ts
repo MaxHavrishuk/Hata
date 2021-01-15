@@ -1,9 +1,11 @@
 import { PhotosDomElements } from './PhotosDomElements';
 import { AlbumToEdit } from './PhotosInterfaces';
+import Swal from 'sweetalert2';
 
 const photosDomElements = new PhotosDomElements();
 
 const dataToEdit: AlbumToEdit = {
+    albumId: Number(photosDomElements.photoAlbumId.value),
     albumName: '',
     albumDescription: '',
     photosToEdit: []
@@ -12,6 +14,7 @@ const dataToEdit: AlbumToEdit = {
 const albumNameString: string = photosDomElements.albumName.innerHTML.trim();
 const albumDescString: string = photosDomElements.albumDescription.innerHTML.trim();
 let isPhotosTextAreaChanged = false;
+
 
 export class PhotosEdit {
 
@@ -226,8 +229,35 @@ export class PhotosEdit {
             }
             const toSend = JSON.stringify(dataToEdit);
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/Photo/Upload', true);
-            xhr.send(toSend);
+            const formData = new FormData();
+            formData.append('albumEdit', toSend)
+            xhr.open('POST', '/Photo/Update', true);
+            xhr.send(formData);
+            xhr.onload = () => {
+                if (xhr.response !== 'OK') { // analyze HTTP status of the response
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Упс...',
+                        text: 'Помилка редагування Альбому',
+                      
+                    }) // e.g. 404: Not Found
+
+                } else { // show the result
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Файно!',
+                        text: `Зміни збережено`,
+                       
+                    }) // response is the server
+                    let confrirm = document.querySelector('.swal2-confirm') as HTMLInputElement;
+                    confrirm.addEventListener('click', () => { location.reload() })
+                    // Reload page
+                    //setTimeout(() => {
+                    //    location.reload();
+                    //}, 300);
+                }
+            };
+           
         });
     }
 

@@ -2,6 +2,7 @@
 using BusinessLogic.BusinessLogicMethods;
 using BusinessLogic.Models;
 using BusinessLogic.Models.JSON_Deserialize._Models;
+using BusinessLogic.Models.JSON_Deserialize_Models;
 using BusinessLogic.Models.ViewModels;
 using BusinessLogic.StaticConstants;
 using HataCom.Repositories;
@@ -24,7 +25,7 @@ namespace HataCom.Controllers
 		{
 			AddAlbumView addAlbumView = new AddAlbumView();
 			addAlbumView.PhotoAlbums = photoAlbumsDb.GetAll();
-			
+
 			return View(addAlbumView);
 		}
 
@@ -78,6 +79,28 @@ namespace HataCom.Controllers
 			}
 		}
 
+		//Оновлення/Редагування існуючого альбому!!!!!!!!!!! ТЕСТ
+		[HttpPost]
+		public HttpStatusCode Update(FormCollection formCollection)
+		{
+			AlbumUpdateModel albumUpdateModel = new AlbumUpdateModel();
+			string jsonString = formCollection["albumEdit"];
+			albumUpdateModel = JsonConvert.DeserializeObject<AlbumUpdateModel>(jsonString);
+			PhotoAlbum album = new PhotoAlbum();
+			album.Description = albumUpdateModel.AlbumDescription;
+			album.Title = albumUpdateModel.AlbumName;
+			album.PhotoAlbumId = albumUpdateModel.AlbumId;
+
+			if (photoAlbumsDb.Update(album))
+			{
+				return HttpStatusCode.OK;
+			}
+			else
+			{
+				return HttpStatusCode.BadRequest;
+			}
+		}
+
 		[HttpGet]
 		public ActionResult Photos(int Id)
 		{
@@ -85,8 +108,10 @@ namespace HataCom.Controllers
 			IEnumerable<Photo> photos = photosDb.GetPhotosByAlbumId(Id);
 			if (photos.Any())
 			{
-				ViewBag.AlbumTitle = photoAlbumsDb.Get(Id).Title;
-				return View(photos);
+				AlbumWithPhotosView albumWithPhotos = new AlbumWithPhotosView();
+				albumWithPhotos.Photos = photos;
+				albumWithPhotos.PhotoAlbum = photoAlbumsDb.Get(Id);
+				return View(albumWithPhotos);
 			}
 			else
 			{

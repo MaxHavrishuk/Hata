@@ -135,11 +135,22 @@ namespace BusinessLogic.BusinessLogicMethods
 		{
 			try
 			{
-				db.Entry(enitity).State = EntityState.Modified;
-				return true;
+				var result = db.PhotoAlbums.SingleOrDefault(e => e.PhotoAlbumId == enitity.PhotoAlbumId);
+				if (result != null)
+				{
+					result.Title = enitity.Title;
+					result.Description = enitity.Description;
+					db.SaveChanges();
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
+				var etst = ex.Message;
 				return false;
 			}
 		}
