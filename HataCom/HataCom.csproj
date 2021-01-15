@@ -171,19 +171,14 @@
     <Compile Include="Providers\UserRolesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\img\Drabina2.jpg" />
-    <Content Include="Content\img\Facebook.svg" />
-    <Content Include="Content\img\Google.svg" />
     <Content Include="Content\img\hata-logo.svg" />
     <Content Include="Content\img\Img1.jpg" />
     <Content Include="Content\img\Img2.jpg" />
     <Content Include="Content\img\Img3.jpg" />
     <Content Include="Content\img\Img4.jpg" />
     <Content Include="Content\mediaContent\UsersPhoto\basicUserAdmin.jpg" />
-    <Content Include="Content\Styles\Auth.css" />
     <Content Include="Content\Styles\Layout.css" />
     <Content Include="Content\Styles\Photos.css" />
-    <Content Include="Scripts\CustomScripts\Auth.js" />
     <Content Include="Scripts\CustomScripts\PhotoAlbums.js" />
     <Content Include="Content\Styles\PhotoAlbums.css" />
     <Content Include="Content\Styles\MainPage.css" />
@@ -201,7 +196,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="TS_Scripts\Auth\webpack.config.js" />
     <Content Include="TS_Scripts\PhotoAlbums\webpack.config.js" />
     <Content Include="TS_Scripts\Photos\webpack.config.js" />
     <Content Include="Web.config" />
@@ -219,7 +213,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Music\MusicAlbum.cshtml" />
-    <Content Include="Views\Photo\Photos.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Account\UserPage.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
@@ -230,9 +223,7 @@
     <Content Include="TS_Scripts\PhotoAlbums\tsconfig.json" />
     <Content Include="TS_Scripts\PhotoAlbums\package.json" />
     <Content Include="TS_Scripts\Photos\package-lock.json" />
-    <Content Include="TS_Scripts\Auth\package.json" />
-    <Content Include="TS_Scripts\Auth\package-lock.json" />
-    <Content Include="TS_Scripts\Auth\tsconfig.json" />
+    <Content Include="Views\Photo\Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -256,10 +247,6 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="TS_Scripts\Auth\AuthAdapt.ts" />
-    <TypeScriptCompile Include="TS_Scripts\Auth\AuthDomElements.ts" />
-    <TypeScriptCompile Include="TS_Scripts\Auth\AuthFormChanger.ts" />
-    <TypeScriptCompile Include="TS_Scripts\Auth\AuthMain.ts" />
     <TypeScriptCompile Include="TS_Scripts\PhotoAlbums\PhotoAlbumsMain.ts" />
     <TypeScriptCompile Include="TS_Scripts\Photos\PhotosAdapt.ts" />
     <TypeScriptCompile Include="TS_Scripts\Photos\PhotosAdd.ts" />

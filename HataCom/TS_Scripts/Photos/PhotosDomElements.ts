@@ -15,6 +15,9 @@
     albumDescriptionEditing: HTMLDivElement;
     albumNameLabel: HTMLDivElement;
     albumDescriptionLabel: HTMLDivElement;
+    photoAlbumId: HTMLInputElement;
+
+
     constructor() {
         this.mainContainer = document.querySelector('.main-container') as HTMLDivElement;
         this.navBar = document.querySelector('.navbar') as HTMLDivElement;
@@ -32,5 +35,8 @@
         this.albumDescriptionEditing = document.querySelector('.album-description-editing') as HTMLDivElement;
         this.albumNameLabel = document.querySelector('.album-name-label') as HTMLDivElement;
         this.albumDescriptionLabel = document.querySelector('.album-description-label') as HTMLDivElement;
+        this.photoAlbumId = document.querySelector('#photoAlbumId') as HTMLInputElement;
+      
+
     }
 }

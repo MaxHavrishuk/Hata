@@ -5,6 +5,7 @@ export interface PhotosToEdit {
 }
 
 export interface AlbumToEdit {
+    albumId: number;
     albumName?: string;
     albumDescription?: string;
     photosToEdit: PhotosToEdit[];

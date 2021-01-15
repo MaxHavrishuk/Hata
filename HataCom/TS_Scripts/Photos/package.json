@@ -1,5 +1,5 @@
 {
-  "name": "photos",
+  "name": "Photos",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -16,5 +16,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "save": "^2.4.0",
+    "sweetalert2": "^10.13.0"
+  }
 }

@@ -114,8 +114,10 @@
     <Compile Include="Models\Authorization\UserOpenAuthModel.cs" />
     <Compile Include="Models\EnumsAndLists\EnumsAndLists.cs" />
     <Compile Include="Models\Authorization\UserModel.cs" />
+    <Compile Include="Models\JSON Deserialize Models\PhotoUpdateModel.cs" />
     <Compile Include="Models\JSON Deserialize Models\PhotoUploadModel.cs" />
     <Compile Include="Models\ViewModels\AddAlbumView.cs" />
+    <Compile Include="Models\ViewModels\AlbumWithPhotosView.cs" />
     <Compile Include="Models\ViewModels\RegisterUserView.cs" />
     <Compile Include="Repositories\PhotoAlbumsRepository.cs" />
     <Compile Include="Contexts\HataContext.cs" />
